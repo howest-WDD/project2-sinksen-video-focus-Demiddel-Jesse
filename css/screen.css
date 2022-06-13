@@ -179,6 +179,10 @@ h6 {
   background-color: #212121;
 }
 
+.c-sfeerfoto img {
+  padding: 0 !important;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
