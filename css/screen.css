@@ -184,3 +184,70 @@ h6 {
 /*------------------------------------*\
 	#BOOTSTRAP
 \*------------------------------------*/
+.nav-link {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  font-style: bold;
+  color: #ffffff !important;
+  transition: opacity 250ms;
+  opacity: 70%;
+}
+.nav-link:hover {
+  opacity: 100%;
+  color: #e6be45 !important;
+}
+
+.active {
+  opacity: 100%;
+  color: #ffffff !important;
+}
+.active:hover {
+  opacity: 100%;
+  color: #ffffff !important;
+}
+
+.carousel-indicators button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 2rem !important;
+  background-color: #b39436 !important;
+}
+.carousel-indicators button:hover {
+  background-color: #e6be45 !important;
+  opacity: 1 !important;
+}
+.carousel-indicators .active {
+  background-color: #4863a0 !important;
+}
+.carousel-indicators .active:hover {
+  background-color: #4863a0 !important;
+  opacity: 1 !important;
+}
+
+.form-control {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: #b39436;
+  border-style: solid;
+  transition: border-color 0s;
+  width: 18rem;
+  margin-bottom: 5rem;
+}
+.form-control:focus {
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #b39436;
+  box-shadow: none;
+}
+.form-control-lg {
+  border-color: #b39436;
+  width: 37.5rem;
+  margin-bottom: 2rem !important;
+}
+.form-control-lg:focus {
+  border-style: none;
+  border-style: solid;
+  border-color: #b39436;
+  box-shadow: none;
+}

@@ -248,3 +248,82 @@ h6 {
 /*------------------------------------*\
 	#BOOTSTRAP
 \*------------------------------------*/
+
+// bootstrap adjustments navigatie
+
+.nav-link {
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+	font-style: bold;
+	color: $Color-text-light !important;
+	transition: opacity 250ms;
+	opacity: 70%;
+
+	&:hover {
+		opacity: 100%;
+		color: $Color-tertiary !important;
+	}
+}
+
+.active {
+	opacity: 100%;
+	color: $Color-text-light !important;
+
+	&:hover {
+		opacity: 100%;
+		color: $Color-text-light !important;
+	}
+}
+
+.carousel-indicators {
+	button {
+		width: 20px !important;
+		height: 20px !important;
+		border-radius: 2rem !important;
+		background-color: $Color-secondary !important;
+
+		&:hover {
+			background-color: $Color-tertiary !important;
+			opacity: 1 !important;
+		}
+	}
+
+	.active {
+		background-color: $Color-accent-1 !important;
+
+		&:hover {
+			background-color: $Color-accent-1 !important;
+			opacity: 1 !important;
+		}
+	}
+}
+
+.form-control {
+	border-top: transparent;
+	border-left: transparent;
+	border-right: transparent;
+	border-bottom: $Color-secondary;
+	border-style: solid;
+	transition: border-color 0s;
+	width: 18rem;
+	margin-bottom: 5rem;
+
+	&:focus {
+		border-style: none;
+		border-bottom-style: solid;
+		border-bottom-color: $Color-secondary;
+		box-shadow: none;
+	}
+
+	&-lg {
+		border-color: $Color-secondary;
+		width: 37.5rem;
+		margin-bottom: 2rem !important;
+		&:focus {
+			border-style: none;
+			border-style: solid;
+			border-color: $Color-secondary;
+			box-shadow: none;
+		}
+	}
+}
