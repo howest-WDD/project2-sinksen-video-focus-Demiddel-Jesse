@@ -2,6 +2,41 @@
 	#SETTINGS
 \*------------------------------------*/
 
+// MIXINS
+// Small devices
+@mixin sm {
+	@media (min-width: 577px) {
+		@content;
+	}
+}
+
+// Medium devices
+@mixin md {
+	@media (min-width: 769px) {
+		@content;
+	}
+}
+
+// Large devices
+@mixin lg {
+	@media (min-width: 993px) {
+		@content;
+	}
+}
+
+// Extra large devices
+@mixin xl {
+	@media (min-width: 1201px) {
+		@content;
+	}
+}
+
+@mixin xxl {
+	@media (min-width: 1601px) {
+		@content;
+	}
+}
+
 // importing fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
