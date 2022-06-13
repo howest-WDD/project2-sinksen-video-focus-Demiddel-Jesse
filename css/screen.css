@@ -1,0 +1,280 @@
+/*------------------------------------*\
+	#SETTINGS
+\*------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+/*------------------------------------*\
+	#TOOLS
+\*------------------------------------*/
+/*------------------------------------*\
+	#GENERIC
+\*------------------------------------*/
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+/*------------------------------------*\
+	#ELEMENTS
+\*------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+/*------------------------------------*\
+	#OBJECTS
+\*------------------------------------*/
+/*------------------------------------*\
+	#COMPONENTS
+\*------------------------------------*/
+.c-header {
+  background-color: #000000;
+}
+
+/* Component Navigatie */
+.c-nav {
+  border-bottom: #b39436;
+  border-top: #b39436;
+  border-width: 10px;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+}
+.c-nav__footer {
+  list-style: none;
+  padding-left: 0;
+}
+.c-nav__footer a {
+  padding-left: 0 !important;
+  color: #000000 !important;
+}
+
+/* Component button */
+.c-btn__primary {
+  font-size: 1rem;
+  background-color: #e6be45;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: transparent;
+  height: 3rem;
+}
+.c-btn__primary p {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.c-btn__primary:hover {
+  background-color: #b39436;
+  color: #ffffff !important;
+}
+.c-btn__primary--disabled {
+  background-color: #e6be45;
+  color: #000000;
+  opacity: 50%;
+}
+.c-btn__primary--disabled:hover {
+  background-color: #e6be45;
+  color: #000000 !important;
+}
+.c-btn__secondary {
+  font-size: 1rem;
+  display: inline-flex;
+  border-color: #e6be45;
+  border-style: solid;
+  background-color: transparent;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 5px;
+}
+.c-btn__secondary:hover {
+  border-color: #b39436;
+  color: #e6be45 !important;
+}
+.c-btn__secondary--disabled {
+  border-color: #e6be45;
+  color: #e6be45;
+  opacity: 50%;
+}
+.c-btn__secondary--disabled:hover {
+  border-color: #e6be45;
+  color: #e6be45 !important;
+}
+
+.c-nieuwsbrief .form-control {
+  border-top: #b39436;
+  border-left: #b39436;
+  border-right: #b39436;
+  border-bottom: #b39436;
+  border-style: solid;
+  transition: border-color 0s;
+  margin-bottom: 0;
+  height: 3.75rem;
+  width: 18rem;
+}
+.c-nieuwsbrief .form-control:focus {
+  border-style: solid !important;
+  border-top: #b39436;
+  border-left: #b39436;
+  border-right: #b39436;
+  border-bottom: #b39436;
+  box-shadow: none;
+}
+.c-nieuwsbrief .form-floating label {
+  margin-left: 1rem;
+}
+.c-nieuwsbrief button {
+  margin-top: 0.3125rem;
+}
+
+.c-social {
+  width: 30px;
+  height: 30px;
+  margin: 0.75rem;
+}
+.c-social__btn {
+  padding: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #b39436;
+  border-color: #b39436;
+}
+.c-social__btn:hover {
+  background-color: #e6be45;
+  border-color: #e6be45;
+  color: #ffffff;
+}
+
+.c-carousel {
+  padding: 0;
+}
+.c-carousel__light {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+}
+.c-carousel__slide--1 {
+  background-image: url(../img/notFound.png);
+}
+
+.c-paging__arrow {
+  fill: #b39436;
+}
+.c-paging__arrow:hover {
+  fill: #e6be45;
+}
+.c-paging__active {
+  background-color: #b39436;
+  color: #ffffff !important;
+}
+.c-paging__active:hover {
+  color: #e6be45 !important;
+}
+
+.c-footer__bottom {
+  background-color: #44c8f5 !important;
+  margin: 0;
+}
+.c-footer__bottom--txt {
+  margin-bottom: 0 !important;
+}
+.c-footer__sponsor {
+  background-color: #212121;
+}
+
+.c-rommelmarkt__txt {
+  margin-right: 5rem;
+}
+@media (min-width: 320px) {
+  .c-rommelmarkt__txt {
+    margin-right: 0;
+  }
+}
+.c-rommelmarkt__img {
+  padding: 0;
+}
+
+.c-sfeerfoto img {
+  padding: 0 !important;
+}
+
+.c-video {
+  aspect-ratio: 16/9;
+}
+
+/*------------------------------------*\
+	#UTILITIES
+\*------------------------------------*/
+/*------------------------------------*\
+	#BOOTSTRAP
+\*------------------------------------*/
+.nav-link {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  font-style: bold;
+  color: #ffffff !important;
+  transition: opacity 250ms;
+  opacity: 70%;
+}
+.nav-link:hover {
+  opacity: 100%;
+  color: #e6be45 !important;
+}
+
+.active {
+  opacity: 100%;
+  color: #ffffff !important;
+}
+.active:hover {
+  opacity: 100%;
+  color: #ffffff !important;
+}
+
+.carousel-indicators button {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 2rem !important;
+  background-color: #b39436 !important;
+}
+.carousel-indicators button:hover {
+  background-color: #e6be45 !important;
+  opacity: 1 !important;
+}
+.carousel-indicators .active {
+  background-color: #4863a0 !important;
+}
+.carousel-indicators .active:hover {
+  background-color: #4863a0 !important;
+  opacity: 1 !important;
+}
+
+.form-control {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: #b39436;
+  border-style: solid;
+  transition: border-color 0s;
+  width: 18rem;
+  margin-bottom: 5rem;
+}
+.form-control:focus {
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: #b39436;
+  box-shadow: none;
+}
+.form-control-lg {
+  border-color: #b39436;
+  width: 37.5rem;
+  margin-bottom: 2rem !important;
+}
+.form-control-lg:focus {
+  border-style: none;
+  border-style: solid;
+  border-color: #b39436;
+  box-shadow: none;
+}
