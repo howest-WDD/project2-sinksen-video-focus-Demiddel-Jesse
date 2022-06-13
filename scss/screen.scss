@@ -315,6 +315,12 @@ h6 {
 	aspect-ratio: 16/9;
 }
 
+.c-contact {
+	&__img {
+		object-fit: scale-down;
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
@@ -379,8 +385,20 @@ h6 {
 	border-bottom: $Color-secondary;
 	border-style: solid;
 	transition: border-color 0s;
-	width: 18rem;
-	margin-bottom: 5rem;
+	width: auto;
+	margin-bottom: 1rem;
+
+	@include mob {
+		width: 17rem;
+	}
+
+	@include md {
+		width: 20rem;
+	}
+
+	@include xxl {
+		width: 18rem;
+	}
 
 	&:focus {
 		border-style: none;
@@ -391,8 +409,32 @@ h6 {
 
 	&-lg {
 		border-color: $Color-secondary;
-		width: 37.5rem;
 		margin-bottom: 2rem !important;
+
+		@include mob {
+			width: 17rem;
+		}
+
+		@include sm {
+			width: 30rem;
+		}
+
+		@include md {
+			width: 43rem;
+		}
+
+		@include lg {
+			width: 28rem;
+		}
+
+		@include xl {
+			width: 34rem;
+		}
+
+		@include xxl {
+			width: 37.5rem;
+		}
+
 		&:focus {
 			border-style: none;
 			border-style: solid;
