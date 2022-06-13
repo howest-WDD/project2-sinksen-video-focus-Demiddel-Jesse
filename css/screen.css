@@ -179,16 +179,8 @@ h6 {
   background-color: #212121;
 }
 
-.c-sfeerfoto {
-  width: 1920px;
-  margin: 0;
-}
-.c-sfeerfoto img {
-  padding: 0 !important;
-}
-
-.c-body {
-  width: 1920px;
+.c-rommelmarkt__txt {
+  margin-right: 5rem;
 }
 
 /*------------------------------------*\
