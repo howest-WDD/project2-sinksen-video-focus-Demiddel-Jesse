@@ -201,6 +201,33 @@ h6 {
 	}
 }
 
+.c-carousel {
+	&__light {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+	}
+}
+
+.c-paging {
+    // arrows used in carousel
+	&__arrow {
+		fill: $Color-secondary;
+
+		&:hover {
+			fill: $Color-tertiary;
+		}
+	}
+
+	&__active {
+		background-color: $Color-secondary;
+		color: $Color-text-light !important;
+		&:hover {
+			color: $Color-tertiary !important;
+		}
+	}
+}
+
+
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/

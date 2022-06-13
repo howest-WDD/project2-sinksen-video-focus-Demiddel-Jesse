@@ -149,6 +149,24 @@ h6 {
   color: #ffffff;
 }
 
+.c-carousel__light {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.c-paging__arrow {
+  fill: #b39436;
+}
+.c-paging__arrow:hover {
+  fill: #e6be45;
+}
+.c-paging__active {
+  background-color: #b39436;
+  color: #ffffff !important;
+}
+.c-paging__active:hover {
+  color: #e6be45 !important;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
