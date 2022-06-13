@@ -181,6 +181,26 @@ h6 {
 	}
 }
 
+.c-social {
+	width: 30px;
+	height: 30px;
+	margin: 0.75rem;
+
+	&__btn {
+		padding: 0.5rem;
+		border-radius: 5px;
+		color: $Color-text-light;
+		background-color: $Color-secondary;
+		border-color: $Color-secondary;
+
+		&:hover {
+			background-color: $Color-tertiary;
+			border-color: $Color-tertiary;
+			color: $Color-text-light;
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/

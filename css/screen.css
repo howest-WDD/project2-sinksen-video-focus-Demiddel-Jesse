@@ -131,6 +131,24 @@ h6 {
   margin-top: 0.3125rem;
 }
 
+.c-social {
+  width: 30px;
+  height: 30px;
+  margin: 0.75rem;
+}
+.c-social__btn {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #b39436;
+  border-color: #b39436;
+}
+.c-social__btn:hover {
+  background-color: #e6be45;
+  border-color: #e6be45;
+  color: #ffffff;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
