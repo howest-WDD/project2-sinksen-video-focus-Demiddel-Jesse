@@ -226,7 +226,20 @@ h6 {
 	}
 }
 
+.c-footer {
+	&__bottom {
+		background-color: #44c8f5 !important;
+		margin: 0;
 
+		&--txt {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	&__sponsor {
+		background-color: #212121;
+	}
+}
 
 /*------------------------------------*\
 	#UTILITIES

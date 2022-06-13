@@ -167,6 +167,17 @@ h6 {
   color: #e6be45 !important;
 }
 
+.c-footer__bottom {
+  background-color: #44c8f5 !important;
+  margin: 0;
+}
+.c-footer__bottom--txt {
+  margin-bottom: 0 !important;
+}
+.c-footer__sponsor {
+  background-color: #212121;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
