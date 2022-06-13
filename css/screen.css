@@ -35,6 +35,24 @@ h6 {
   background-color: #000000;
 }
 
+/* Component Navigatie */
+.c-nav {
+  border-bottom: #b39436;
+  border-top: #b39436;
+  border-width: 10px;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+}
+.c-nav__footer {
+  list-style: none;
+  padding-left: 0;
+}
+.c-nav__footer a {
+  padding-left: 0 !important;
+  color: #000000 !important;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/

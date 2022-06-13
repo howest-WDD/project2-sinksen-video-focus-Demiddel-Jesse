@@ -61,6 +61,29 @@ h6 {
 	background-color: $Color-text-dark;
 }
 
+/* Component Navigatie */
+
+.c-nav {
+	border-bottom: $Color-secondary;
+	border-top: $Color-secondary;
+
+	border-width: 10px;
+	border-style: solid;
+
+	border-left: none;
+	border-right: none;
+
+	&__footer {
+		list-style: none;
+		padding-left: 0;
+
+		a {
+			padding-left: 0 !important;
+			color: $Color-text-dark !important;
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
