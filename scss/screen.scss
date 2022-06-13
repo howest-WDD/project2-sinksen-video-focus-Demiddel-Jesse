@@ -38,6 +38,12 @@
 	}
 }
 
+@mixin xll {
+	@media (min-width: 1401px) {
+		@content;
+	}
+}
+
 @mixin xxl {
 	@media (min-width: 1601px) {
 		@content;
@@ -199,7 +205,34 @@ h6 {
 			transition: border-color 0s;
 			margin-bottom: 0;
 			height: 3.75rem;
-			width: 18rem;
+
+			@include mob {
+				width: 18rem;
+			}
+
+			@include sm {
+				width: 23rem;
+			}
+
+			@include md {
+				width: 30rem;
+			}
+
+			@include lg {
+				width: 20rem;
+			}
+
+			@include xl {
+				width: 27rem;
+			}
+
+			@include xll {
+				width: 31rem;
+			}
+
+			@include xxl {
+				width: 32rem;
+			}
 
 			&:focus {
 				border-style: solid !important;
@@ -212,6 +245,9 @@ h6 {
 		}
 
 		&-floating {
+			margin-bottom: 0 !important;
+			padding: 0 !important;
+
 			label {
 				margin-left: 1rem;
 			}
@@ -392,8 +428,24 @@ h6 {
 		width: 17rem;
 	}
 
+	@include sm {
+		width: 15rem;
+	}
+
 	@include md {
 		width: 20rem;
+	}
+
+	@include lg {
+		width: 13rem;
+	}
+
+	@include xl {
+		width: 16rem;
+	}
+
+	@include xll {
+		width: 18rem;
 	}
 
 	@include xxl {
@@ -431,8 +483,12 @@ h6 {
 			width: 34rem;
 		}
 
+		@include xll {
+			width: 39rem;
+		}
+
 		@include xxl {
-			width: 37.5rem;
+			width: 39rem;
 		}
 
 		&:focus {

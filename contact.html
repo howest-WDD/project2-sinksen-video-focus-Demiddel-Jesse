@@ -56,33 +56,29 @@
 				<img src="img/woman_typing_at_the_computer-1958362443.jpg" alt="contact image" class="img-fluid col-6 c-contact__img d-none d-lg-block" />
 				<div class="col-12 col-lg-6">
 					<form class="row">
-						<div class="col-12 col-sm-6">
-							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" placeholder="John" required />
-								<label for="floatingInput">Voornaam</label>
-							</div>
-							<div class="form-floating mb-3">
-								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-								<label for="floatingInput">E-mail</label>
-							</div>
+						<div class="form-floating mb-3 order-1 col-12 col-sm-6">
+							<input type="text" class="form-control" id="floatingInput" placeholder="John" required />
+							<label for="floatingInput">Voornaam</label>
 						</div>
-						<div class="col-12 col-sm-6">
-							<div class="form-floating mb-3">
-								<input type="text" class="form-control" id="floatingInput" placeholder="Doe" required />
-								<label for="floatingInput">Naam</label>
-							</div>
-							<div class="form-floating mb-3">
-								<input type="tel" class="form-control" id="floatingInput" placeholder="+32......." required />
-								<label for="floatingInput">GSM-nummer</label>
-							</div>
+						<div class="form-floating mb-3 order-3 col-12 col-sm-6">
+							<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+							<label for="floatingInput">E-mail</label>
 						</div>
-						<div class="mb-0">
+						<div class="form-floating mb-3 order-2 col-12 col-sm-6">
+							<input type="text" class="form-control" id="floatingInput" placeholder="Doe" required />
+							<label for="floatingInput">Naam</label>
+						</div>
+						<div class="form-floating mb-3 order-3 col-12 col-sm-6">
+							<input type="tel" class="form-control" id="floatingInput" placeholder="+32......." required />
+							<label for="floatingInput">GSM-nummer</label>
+						</div>
+						<div class="mb-0 order-5">
 							<textarea name="woonplaats" id="woonplaats" class="form-control form-control-lg" placeholder="Woonplaats..." rows="1" required></textarea>
 						</div>
-						<div class="">
+						<div class="order-5">
 							<textarea name="bericht" id="bericht" class="form-control form-control-lg" placeholder="Bericht..." rows="5" required></textarea>
 						</div>
-						<button type="submit" class="c-btn__primary c-form__btn col-4 col-lg-2 offset-8 offset-sm-9">Submit</button>
+						<div class="row justify-content-end order-last"><button type="submit" class="c-btn__primary c-form__btn col-4 col-sm-3 col-md-2">Submit</button></div>
 					</form>
 				</div>
 			</div>
@@ -113,7 +109,7 @@
 					<!-- nav & nieuwsbrief -->
 					<article class="row">
 						<!-- nav -->
-						<div class="col-12 col-lg-2">
+						<div class="col-12 col-lg-3">
 							<h3>Sinksen 2022</h3>
 							<ul class="c-nav__footer">
 								<li class="nav-item"><a href="#" class="nav-link">Programma</a></li>
@@ -122,15 +118,15 @@
 							</ul>
 						</div>
 						<!-- nieuwsbrief -->
-						<div class="col-12 col-lg-4 offset-lg-6">
+						<div class="col-12 col-lg-6 offset-lg-3">
 							<h3>Schrijf je in voor de nieuwsbrief</h3>
 							<p>En blijf op de hoogte van alle nieuwtjes over sinksen 2022</p>
-							<div class="row c-nieuwsbrief mb-2">
-								<div class="form-floating mb-3 col-12 align-content-center">
+							<div class="row c-nieuwsbrief mb-2 justify-content-end align-items-center">
+								<div class="form-floating mt-2 col">
 									<input type="e-mail" class="form-control" id="floatingInput" placeholder="name@example.com" />
 									<label for="floatingInput">E-mail</label>
 								</div>
-								<button class="c-btn__primary m-3 mt-0 mb-0 offset-lg-1 col-4 col-sm-3 col-lg-4 col-xl-3">
+								<button class="c-btn__primary m-3 mt-2 mb-0 col-4 col-sm-3 col-lg-3 col-xl-2">
 									<p class="c-btn__txt">Verstuur</p>
 								</button>
 							</div>
@@ -139,7 +135,7 @@
 				</section>
 			</div>
 			<!-- Sponser section -->
-			<section class="c-footer__sponsor mb-0">
+			<section class="c-footer__sponsor mb-0 mt-2">
 				<div class="container p-5">
 					<img src="img/02-kortrijk-logo-wit-pos.png" alt="logo Kortrijk" width="300" class="img-fluid" />
 				</div>
