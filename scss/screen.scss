@@ -84,6 +84,68 @@ h6 {
 	}
 }
 
+/* Component button */
+
+.c-btn {
+	&__primary {
+		font-size: 1rem;
+		background-color: $Color-tertiary;
+		text-decoration: none;
+		color: $Color-text-dark;
+		border-radius: 5px;
+		border-style: solid;
+		border-color: transparent;
+		height: 3rem;
+
+		p {
+			margin-top: 0.5rem !important;
+			margin-bottom: 0.5rem !important;
+		}
+
+		&:hover {
+			background-color: $Color-secondary;
+			color: $Color-text-light !important;
+		}
+
+		&--disabled {
+			background-color: $Color-tertiary;
+			color: $Color-text-dark;
+			opacity: 50%;
+
+			&:hover {
+				background-color: $Color-tertiary;
+				color: $Color-text-dark !important;
+			}
+		}
+	}
+
+	&__secondary {
+		font-size: 1rem;
+		display: inline-flex;
+		border-color: $Color-tertiary;
+		border-style: solid;
+		background-color: transparent;
+		text-decoration: none;
+		color: $Color-text-dark;
+		border-radius: 5px;
+
+		&:hover {
+			border-color: $Color-secondary;
+			color: $Color-tertiary !important;
+		}
+
+		&--disabled {
+			border-color: $Color-tertiary;
+			color: $Color-tertiary;
+			opacity: 50%;
+			&:hover {
+				border-color: $Color-tertiary;
+				color: $Color-tertiary !important;
+			}
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/

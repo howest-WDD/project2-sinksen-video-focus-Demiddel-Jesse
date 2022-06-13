@@ -53,6 +53,58 @@ h6 {
   color: #000000 !important;
 }
 
+/* Component button */
+.c-btn__primary {
+  font-size: 1rem;
+  background-color: #e6be45;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: transparent;
+  height: 3rem;
+}
+.c-btn__primary p {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.c-btn__primary:hover {
+  background-color: #b39436;
+  color: #ffffff !important;
+}
+.c-btn__primary--disabled {
+  background-color: #e6be45;
+  color: #000000;
+  opacity: 50%;
+}
+.c-btn__primary--disabled:hover {
+  background-color: #e6be45;
+  color: #000000 !important;
+}
+.c-btn__secondary {
+  font-size: 1rem;
+  display: inline-flex;
+  border-color: #e6be45;
+  border-style: solid;
+  background-color: transparent;
+  text-decoration: none;
+  color: #000000;
+  border-radius: 5px;
+}
+.c-btn__secondary:hover {
+  border-color: #b39436;
+  color: #e6be45 !important;
+}
+.c-btn__secondary--disabled {
+  border-color: #e6be45;
+  color: #e6be45;
+  opacity: 50%;
+}
+.c-btn__secondary--disabled:hover {
+  border-color: #e6be45;
+  color: #e6be45 !important;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
