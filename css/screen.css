@@ -114,7 +114,41 @@ h6 {
   transition: border-color 0s;
   margin-bottom: 0;
   height: 3.75rem;
-  width: 18rem;
+}
+@media (min-width: 320px) {
+  .c-nieuwsbrief .form-control {
+    width: 18rem;
+  }
+}
+@media (min-width: 577px) {
+  .c-nieuwsbrief .form-control {
+    width: 23rem;
+  }
+}
+@media (min-width: 769px) {
+  .c-nieuwsbrief .form-control {
+    width: 30rem;
+  }
+}
+@media (min-width: 993px) {
+  .c-nieuwsbrief .form-control {
+    width: 20rem;
+  }
+}
+@media (min-width: 1201px) {
+  .c-nieuwsbrief .form-control {
+    width: 27rem;
+  }
+}
+@media (min-width: 1401px) {
+  .c-nieuwsbrief .form-control {
+    width: 31rem;
+  }
+}
+@media (min-width: 1601px) {
+  .c-nieuwsbrief .form-control {
+    width: 32rem;
+  }
 }
 .c-nieuwsbrief .form-control:focus {
   border-style: solid !important;
@@ -123,6 +157,10 @@ h6 {
   border-right: #b39436;
   border-bottom: #b39436;
   box-shadow: none;
+}
+.c-nieuwsbrief .form-floating {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 .c-nieuwsbrief .form-floating label {
   margin-left: 1rem;
@@ -205,6 +243,10 @@ h6 {
   aspect-ratio: 16/9;
 }
 
+.c-contact__img {
+  object-fit: scale-down;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
@@ -258,8 +300,43 @@ h6 {
   border-bottom: #b39436;
   border-style: solid;
   transition: border-color 0s;
-  width: 18rem;
-  margin-bottom: 5rem;
+  width: auto;
+  margin-bottom: 1rem;
+}
+@media (min-width: 320px) {
+  .form-control {
+    width: 17rem;
+  }
+}
+@media (min-width: 577px) {
+  .form-control {
+    width: 15rem;
+  }
+}
+@media (min-width: 769px) {
+  .form-control {
+    width: 20rem;
+  }
+}
+@media (min-width: 993px) {
+  .form-control {
+    width: 13rem;
+  }
+}
+@media (min-width: 1201px) {
+  .form-control {
+    width: 16rem;
+  }
+}
+@media (min-width: 1401px) {
+  .form-control {
+    width: 18rem;
+  }
+}
+@media (min-width: 1601px) {
+  .form-control {
+    width: 18rem;
+  }
 }
 .form-control:focus {
   border-style: none;
@@ -269,8 +346,42 @@ h6 {
 }
 .form-control-lg {
   border-color: #b39436;
-  width: 37.5rem;
   margin-bottom: 2rem !important;
+}
+@media (min-width: 320px) {
+  .form-control-lg {
+    width: 17rem;
+  }
+}
+@media (min-width: 577px) {
+  .form-control-lg {
+    width: 30rem;
+  }
+}
+@media (min-width: 769px) {
+  .form-control-lg {
+    width: 43rem;
+  }
+}
+@media (min-width: 993px) {
+  .form-control-lg {
+    width: 28rem;
+  }
+}
+@media (min-width: 1201px) {
+  .form-control-lg {
+    width: 34rem;
+  }
+}
+@media (min-width: 1401px) {
+  .form-control-lg {
+    width: 39rem;
+  }
+}
+@media (min-width: 1601px) {
+  .form-control-lg {
+    width: 39rem;
+  }
 }
 .form-control-lg:focus {
   border-style: none;

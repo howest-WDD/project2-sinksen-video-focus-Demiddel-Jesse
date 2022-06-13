@@ -38,6 +38,12 @@
 	}
 }
 
+@mixin xll {
+	@media (min-width: 1401px) {
+		@content;
+	}
+}
+
 @mixin xxl {
 	@media (min-width: 1601px) {
 		@content;
@@ -199,7 +205,34 @@ h6 {
 			transition: border-color 0s;
 			margin-bottom: 0;
 			height: 3.75rem;
-			width: 18rem;
+
+			@include mob {
+				width: 18rem;
+			}
+
+			@include sm {
+				width: 23rem;
+			}
+
+			@include md {
+				width: 30rem;
+			}
+
+			@include lg {
+				width: 20rem;
+			}
+
+			@include xl {
+				width: 27rem;
+			}
+
+			@include xll {
+				width: 31rem;
+			}
+
+			@include xxl {
+				width: 32rem;
+			}
 
 			&:focus {
 				border-style: solid !important;
@@ -212,6 +245,9 @@ h6 {
 		}
 
 		&-floating {
+			margin-bottom: 0 !important;
+			padding: 0 !important;
+
 			label {
 				margin-left: 1rem;
 			}
@@ -315,6 +351,12 @@ h6 {
 	aspect-ratio: 16/9;
 }
 
+.c-contact {
+	&__img {
+		object-fit: scale-down;
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
@@ -379,8 +421,36 @@ h6 {
 	border-bottom: $Color-secondary;
 	border-style: solid;
 	transition: border-color 0s;
-	width: 18rem;
-	margin-bottom: 5rem;
+	width: auto;
+	margin-bottom: 1rem;
+
+	@include mob {
+		width: 17rem;
+	}
+
+	@include sm {
+		width: 15rem;
+	}
+
+	@include md {
+		width: 20rem;
+	}
+
+	@include lg {
+		width: 13rem;
+	}
+
+	@include xl {
+		width: 16rem;
+	}
+
+	@include xll {
+		width: 18rem;
+	}
+
+	@include xxl {
+		width: 18rem;
+	}
 
 	&:focus {
 		border-style: none;
@@ -391,8 +461,36 @@ h6 {
 
 	&-lg {
 		border-color: $Color-secondary;
-		width: 37.5rem;
 		margin-bottom: 2rem !important;
+
+		@include mob {
+			width: 17rem;
+		}
+
+		@include sm {
+			width: 30rem;
+		}
+
+		@include md {
+			width: 43rem;
+		}
+
+		@include lg {
+			width: 28rem;
+		}
+
+		@include xl {
+			width: 34rem;
+		}
+
+		@include xll {
+			width: 39rem;
+		}
+
+		@include xxl {
+			width: 39rem;
+		}
+
 		&:focus {
 			border-style: none;
 			border-style: solid;
