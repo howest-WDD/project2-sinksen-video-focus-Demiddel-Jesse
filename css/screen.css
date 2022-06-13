@@ -150,6 +150,9 @@ h6 {
   color: #ffffff;
 }
 
+.c-carousel {
+  padding: 0;
+}
 .c-carousel__light {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
 }
@@ -181,6 +184,10 @@ h6 {
 
 .c-rommelmarkt__txt {
   margin-right: 5rem;
+}
+
+.c-sfeerfoto img {
+  padding: 0 !important;
 }
 
 /*------------------------------------*\
