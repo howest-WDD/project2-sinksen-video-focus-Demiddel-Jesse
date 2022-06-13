@@ -3,6 +3,13 @@
 \*------------------------------------*/
 
 // MIXINS
+// mobile
+@mixin mob {
+	@media (min-width: 320px) {
+		@content;
+	}
+}
+
 // Small devices
 @mixin sm {
 	@media (min-width: 577px) {
@@ -239,8 +246,15 @@ h6 {
 
 .c-carousel {
 	padding: 0;
+
 	&__light {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+	}
+
+	&__slide {
+		&--1 {
+			background-image: url(../img/notFound.png);
+		}
 	}
 }
 
@@ -280,7 +294,14 @@ h6 {
 
 .c-rommelmarkt {
 	&__txt {
+		@include mob {
+			margin-right: 0;
+		}
 		margin-right: 5rem;
+	}
+
+	&__img {
+		padding: 0;
 	}
 }
 
@@ -288,6 +309,10 @@ h6 {
 	img {
 		padding: 0 !important;
 	}
+}
+
+.c-video {
+	aspect-ratio: 16/9;
 }
 
 /*------------------------------------*\

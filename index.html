@@ -22,16 +22,16 @@
 			<nav class="navbar navbar-dark navbar-expand-lg container">
 				<div class="container-fluid">
 					<!-- Logo sinksen -->
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="index.html">
 						<img src="img/logo-sinksen.svg" alt="logo sinksen" height="100" width="100" />
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-						<ul class="navbar-nav mb-2 mb-lg-0 c-nav">
+						<ul class="navbar-nav mb-2 mb-lg-0 c-nav align-items-center ">
 							<li class="nav-item">
-								<a href="#" class="nav-link active"><h5>Home</h5></a>
+								<a href="index.html" class="nav-link active"><h5>Home</h5></a>
 							</li>
 							<li class="nav-item">
 								<a href="#" class="nav-link"><h5>Programma</h5></a>
@@ -52,9 +52,9 @@
 		</header>
 		<main>
 			<!-- Carousel section -->
-			<section class="container-fluid c-carousel">
+			<section class="container-fluid c-carousel d-none d-lg-block">
 				<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-indicators container">
+					<div class="carousel-indicators">
 						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
 						<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -110,15 +110,16 @@
 				</div>
 			</section>
 			<!-- Video section -->
-			<section class="container col-10 mt-3">
-				<img src="img/videnotfound.png" alt="video" class="img-fluid" />
-				<video src="#"></video>
-			</section>
+			<div class="container mt-2 mb-2 c-video" id="video">
+				<div class="row ">
+					<iframe src="https://www.youtube.com/embed/bd6fNeS7FNU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="c-video"></iframe>
+				</div>
+			</div>
 			<!-- Rommelmarkt promo -->
-			<section class="c-rommelmarkt container-fluid">
+			<section class="c-rommelmarkt container-fluid mt-5">
 				<div class="row">
-					<div class="col-5"><img src="img/image_rommelmarkt.png" alt="#" class="img-fluid" /></div>
-					<div class="col-3 offset-1 align-self-center c-rommelmarkt__txt">
+					<div class="col-6 c-rommelmarkt__img d-none d-lg-block"><img src="img/image_rommelmarkt.png" alt="#" class="img-fluid" /></div>
+					<div class="col-12  col-lg-3 offset-lg-1 align-self-center c-rommelmarkt__txt">
 						<h2>Rommelmarkt Sinksen 2022</h2>
 						<p>
 							Deze editie van de sinksen willen we opnieuw een zo groot mogelijke rommelmarkt maken. De vorige editie was 7km lang en we willen dit proberen te verbreken.
@@ -131,14 +132,16 @@
 						</button>
 					</div>
 				</div>
-        <section class="row mt-5 mb-5 c-sfeerfoto">
-          <img src="img/Sfeer-1.png" alt="Sfeer-1" class="col-6" />
-          <img src="img/Sfeer-2.png" alt="Sfeer-2" class="col-6" />
-          <img src="img/Sfeer-3.png" alt="Sfeer-3" class="col-6" />
-          <img src="img/Sfeer-4.png" alt="Sfeer-4" class="col-6" />
+        <section class=" mt-5 mb-5 c-sfeerfoto d-none d-md-block">
+          <div class="row">
+            <img src="img/Sfeer-1.png" alt="Sfeer-1" class="col-6" />
+            <img src="img/Sfeer-2.png" alt="Sfeer-2" class="col-6" />
+            <img src="img/Sfeer-3.png" alt="Sfeer-3" class="col-6" />
+            <img src="img/Sfeer-4.png" alt="Sfeer-4" class="col-6" />
+          </div>
         </section>
 		</main>
-		<footer class="c-footer">
+		<footer class="c-footer mt-5">
 			<div class="container">
 				<!-- Top section -->
 				<section>
@@ -164,7 +167,7 @@
 					<!-- nav & nieuwsbrief -->
 					<article class="row">
 						<!-- nav -->
-						<div class="col-2">
+						<div class="col-12 col-lg-2">
 							<h3>Sinksen 2022</h3>
 							<ul class="c-nav__footer">
 								<li class="nav-item"><a href="#" class="nav-link">Programma</a></li>
@@ -173,15 +176,15 @@
 							</ul>
 						</div>
 						<!-- nieuwsbrief -->
-						<div class="col-4 offset-6">
+						<div class="col-12 col-lg-4 offset-lg-6">
 							<h3>Schrijf je in voor de nieuwsbrief</h3>
 							<p>En blijf op de hoogte van alle nieuwtjes over sinksen 2022</p>
-							<div class="row c-nieuwsbrief">
-								<div class="form-floating mb-3 col-9 align-content-center">
+							<div class="row c-nieuwsbrief mb-2">
+								<div class="form-floating mb-3 col-12 align-content-center">
 									<input type="e-mail" class="form-control" id="floatingInput" placeholder="name@example.com" />
 									<label for="floatingInput">E-mail</label>
 								</div>
-								<button class="c-btn__primary col-3">
+								<button class="c-btn__primary m-3 mt-0 mb-0 offset-lg-1 col-4 col-sm-3 col-lg-4 col-xl-3">
 									<p class="c-btn__txt">Verstuur</p>
 								</button>
 							</div>
@@ -192,7 +195,7 @@
 			<!-- Sponser section -->
 			<section class="c-footer__sponsor mb-0 ">
 				<div class="container p-5">
-          <img src="img/02-kortrijk-logo-wit-pos.png" alt="logo Kortrijk" width="300" />
+          <img src="img/02-kortrijk-logo-wit-pos.png" alt="logo Kortrijk" width="300" class="img-fluid" />
         </div>
 			</section>
 			<!-- Howest banner -->

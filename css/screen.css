@@ -156,6 +156,9 @@ h6 {
 .c-carousel__light {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
 }
+.c-carousel__slide--1 {
+  background-image: url(../img/notFound.png);
+}
 
 .c-paging__arrow {
   fill: #b39436;
@@ -185,9 +188,21 @@ h6 {
 .c-rommelmarkt__txt {
   margin-right: 5rem;
 }
+@media (min-width: 320px) {
+  .c-rommelmarkt__txt {
+    margin-right: 0;
+  }
+}
+.c-rommelmarkt__img {
+  padding: 0;
+}
 
 .c-sfeerfoto img {
   padding: 0 !important;
+}
+
+.c-video {
+  aspect-ratio: 16/9;
 }
 
 /*------------------------------------*\
