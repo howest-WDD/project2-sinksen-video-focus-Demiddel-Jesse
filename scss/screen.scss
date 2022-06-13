@@ -188,6 +188,7 @@ h6 {
 
 	&__btn {
 		padding: 0.5rem;
+		padding-bottom: 0.75rem;
 		border-radius: 5px;
 		color: $Color-text-light;
 		background-color: $Color-secondary;
@@ -208,7 +209,7 @@ h6 {
 }
 
 .c-paging {
-    // arrows used in carousel
+	// arrows used in carousel
 	&__arrow {
 		fill: $Color-secondary;
 

@@ -138,6 +138,7 @@ h6 {
 }
 .c-social__btn {
   padding: 0.5rem;
+  padding-bottom: 0.75rem;
   border-radius: 5px;
   color: #ffffff;
   background-color: #b39436;
