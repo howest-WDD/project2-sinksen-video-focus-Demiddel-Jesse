@@ -146,6 +146,41 @@ h6 {
 	}
 }
 
+.c-nieuwsbrief {
+	.form {
+		&-control {
+			border-top: $Color-secondary;
+			border-left: $Color-secondary;
+			border-right: $Color-secondary;
+			border-bottom: $Color-secondary;
+			border-style: solid;
+			transition: border-color 0s;
+			margin-bottom: 0;
+			height: 3.75rem;
+			width: 18rem;
+
+			&:focus {
+				border-style: solid !important;
+				border-top: $Color-secondary;
+				border-left: $Color-secondary;
+				border-right: $Color-secondary;
+				border-bottom: $Color-secondary;
+				box-shadow: none;
+			}
+		}
+
+		&-floating {
+			label {
+				margin-left: 1rem;
+			}
+		}
+	}
+
+	button {
+		margin-top: 0.3125rem;
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/

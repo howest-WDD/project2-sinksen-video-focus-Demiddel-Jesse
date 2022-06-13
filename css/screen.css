@@ -105,6 +105,32 @@ h6 {
   color: #e6be45 !important;
 }
 
+.c-nieuwsbrief .form-control {
+  border-top: #b39436;
+  border-left: #b39436;
+  border-right: #b39436;
+  border-bottom: #b39436;
+  border-style: solid;
+  transition: border-color 0s;
+  margin-bottom: 0;
+  height: 3.75rem;
+  width: 18rem;
+}
+.c-nieuwsbrief .form-control:focus {
+  border-style: solid !important;
+  border-top: #b39436;
+  border-left: #b39436;
+  border-right: #b39436;
+  border-bottom: #b39436;
+  box-shadow: none;
+}
+.c-nieuwsbrief .form-floating label {
+  margin-left: 1rem;
+}
+.c-nieuwsbrief button {
+  margin-top: 0.3125rem;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
