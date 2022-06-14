@@ -358,8 +358,10 @@ h6 {
 }
 
 .c-nieuws {
-	.col-lg-6 {
-		width: 49%;
+	@include lg {
+		.col-lg-6 {
+			width: 49%;
+		}
 	}
 
 	&__item {
