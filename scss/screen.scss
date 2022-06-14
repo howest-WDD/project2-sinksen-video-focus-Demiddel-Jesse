@@ -443,6 +443,52 @@ h6 {
 	}
 }
 
+/* Artist item component */
+
+.c-card {
+	&__text {
+		color: $Color-tertiary;
+	}
+	&__gradient {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0) 100%);
+	}
+}
+
+.c-programma {
+	.col-2 {
+		width: 20%;
+	}
+
+	&__filter {
+		&--slider {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			padding-right: 0;
+			padding-left: 0;
+			margin-right: 0.5rem;
+			border-radius: 0.5rem;
+			background-color: $Color-tertiary;
+		}
+
+		&--search {
+			div {
+				.form-control {
+					padding: 1rem;
+					margin-bottom: 0;
+					background-color: $Color-tertiary;
+					border: solid $Color-tertiary;
+					border-right: transparent;
+				}
+
+				.input-group-text {
+					background-color: $Color-tertiary;
+					border-color: $Color-tertiary;
+				}
+			}
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
@@ -583,5 +629,60 @@ h6 {
 			border-color: $Color-secondary;
 			box-shadow: none;
 		}
+	}
+}
+
+// bootstrap adjustments artist item
+
+.bg-dark {
+	background-color: white !important;
+}
+
+.card {
+	border-radius: 15px !important;
+	border-color: transparent;
+	height: 250px;
+	padding: 0;
+	&-img {
+		width: 100%;
+		height: 100%;
+		object-position: center;
+		object-fit: cover;
+		border-radius: 15px !important;
+
+		&-overlay {
+			border-radius: 15px !important;
+		}
+	}
+
+	&-text {
+		margin-bottom: 4px;
+		text-shadow: 2px 2px 2px $Color-text-dark;
+	}
+}
+
+.page {
+	&-link {
+		border-color: transparent;
+		color: $Color-secondary;
+		&:hover {
+			color: $Color-tertiary;
+			border-color: $Color-tertiary;
+			background-color: transparent;
+		}
+	}
+}
+
+.form-select {
+	padding: 1rem 0.5rem;
+	color: $Color-text-dark;
+	background-color: $Color-tertiary;
+	border-color: $Color-tertiary;
+
+	&:focus {
+		border-style: none;
+		border-style: solid;
+		border-color: $Color-secondary;
+		box-shadow: none;
 	}
 }
