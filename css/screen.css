@@ -283,6 +283,45 @@ h6 {
   line-height: normal;
 }
 
+.c-detail__link {
+  text-decoration: none;
+  color: #b39436;
+}
+.c-detail__link:hover {
+  color: #e6be45;
+}
+.c-detail__img {
+  padding: 0;
+}
+@media (min-width: 320px) {
+  .c-detail__txt--like {
+    justify-content: end;
+  }
+}
+@media (min-width: 577px) {
+  .c-detail__txt--like {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 993px) {
+  .c-detail__txt--like {
+    justify-content: end;
+  }
+}
+@media (min-width: 1601px) {
+  .c-detail__txt--like {
+    justify-content: space-between;
+  }
+}
+.c-detail__txt--like a {
+  width: fit-content;
+  text-decoration: none;
+  color: #b39436;
+}
+.c-detail__txt--like a:hover {
+  color: #e6be45;
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
