@@ -398,6 +398,51 @@ h6 {
 	}
 }
 
+.c-detail {
+	&__link {
+		text-decoration: none;
+		color: $Color-secondary;
+
+		&:hover {
+			color: $Color-tertiary;
+		}
+	}
+
+	&__img {
+		padding: 0;
+	}
+
+	&__txt {
+		&--like {
+			@include mob {
+				justify-content: end;
+			}
+
+			@include sm {
+				justify-content: space-between;
+			}
+
+			@include lg {
+				justify-content: end;
+			}
+
+			@include xxl {
+				justify-content: space-between;
+			}
+
+			a {
+				width: fit-content;
+				text-decoration: none;
+				color: $Color-secondary;
+
+				&:hover {
+					color: $Color-tertiary;
+				}
+			}
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
