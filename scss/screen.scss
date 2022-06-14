@@ -358,7 +358,7 @@ h6 {
 }
 
 .c-nieuws {
-	.col-6 {
+	.col-lg-6 {
 		width: 49%;
 	}
 
@@ -369,7 +369,14 @@ h6 {
 		&--img {
 			object-position: center;
 			object-fit: cover;
-			height: 300px;
+
+			@include mob {
+				height: 12.5rem;
+			}
+
+			@include md {
+				height: 15.625rem;
+			}
 		}
 
 		&--header {
@@ -383,6 +390,7 @@ h6 {
 			sub {
 				width: auto;
 				margin: auto;
+				line-height: normal;
 			}
 		}
 	}
