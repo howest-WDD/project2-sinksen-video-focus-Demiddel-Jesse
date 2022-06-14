@@ -357,6 +357,37 @@ h6 {
 	}
 }
 
+.c-nieuws {
+	.col-6 {
+		width: 49%;
+	}
+
+	&__item {
+		border: solid $Color-secondary;
+		padding: 0;
+
+		&--img {
+			object-position: center;
+			object-fit: cover;
+			height: 300px;
+		}
+
+		&--header {
+			padding: 1rem;
+
+			h2 {
+				width: auto;
+				margin: auto;
+			}
+
+			sub {
+				width: auto;
+				margin: auto;
+			}
+		}
+	}
+}
+
 /*------------------------------------*\
 	#UTILITIES
 \*------------------------------------*/
