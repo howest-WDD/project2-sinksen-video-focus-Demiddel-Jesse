@@ -457,7 +457,6 @@ h6 {
 }
 
 .c-programma {
-	
 	@include lg {
 		.col-lg-2 {
 			width: 20%;
@@ -525,6 +524,12 @@ h6 {
 			}
 		}
 	}
+}
+
+.c-map {
+	height: 500px;
+	width: 100%;
+	margin-bottom: 3rem;
 }
 
 /*------------------------------------*\
