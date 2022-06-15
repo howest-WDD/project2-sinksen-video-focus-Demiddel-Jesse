@@ -39,7 +39,7 @@ h6 {
 .c-nav {
   border-bottom: #b39436;
   border-top: #b39436;
-  border-width: 10px;
+  border-width: 2px;
   border-style: solid;
   border-left: none;
   border-right: none;
@@ -332,8 +332,10 @@ h6 {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0) 100%);
 }
 
-.c-programma .col-2 {
-  width: 20%;
+@media (min-width: 993px) {
+  .c-programma .col-lg-2 {
+    width: 20%;
+  }
 }
 .c-programma__top .row {
   --bs-gutter-x: 0;
@@ -341,8 +343,15 @@ h6 {
 .c-programma__filter .row {
   margin-left: 0;
 }
-.c-programma__filter .col-3 {
-  width: 24.5% !important;
+@media (min-width: 577px) {
+  .c-programma__filter .col-sm-6 {
+    width: 49%;
+  }
+}
+@media (min-width: 993px) {
+  .c-programma__filter .col-lg-3 {
+    width: 24.5% !important;
+  }
 }
 .c-programma__filter--time {
   padding: 0;
@@ -386,6 +395,9 @@ h6 {
   color: #ffffff !important;
   transition: opacity 250ms;
   opacity: 70%;
+}
+.nav-link h5 {
+  margin-bottom: 0;
 }
 .nav-link:hover {
   opacity: 100%;

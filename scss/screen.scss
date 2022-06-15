@@ -115,7 +115,7 @@ h6 {
 	border-bottom: $Color-secondary;
 	border-top: $Color-secondary;
 
-	border-width: 10px;
+	border-width: 2px;
 	border-style: solid;
 
 	border-left: none;
@@ -457,8 +457,11 @@ h6 {
 }
 
 .c-programma {
-	.col-2 {
-		width: 20%;
+	
+	@include lg {
+		.col-lg-2 {
+			width: 20%;
+		}
 	}
 
 	&__top {
@@ -472,8 +475,16 @@ h6 {
 			margin-left: 0;
 		}
 
-		.col-3 {
-			width: 24.5% !important;
+		@include sm {
+			.col-sm-6 {
+				width: 49%;
+			}
+		}
+
+		@include lg {
+			.col-lg-3 {
+				width: 24.5% !important;
+			}
 		}
 
 		&--time {
@@ -533,6 +544,10 @@ h6 {
 	color: $Color-text-light !important;
 	transition: opacity 250ms;
 	opacity: 70%;
+
+	h5 {
+		margin-bottom: 0;
+	}
 
 	&:hover {
 		opacity: 100%;
