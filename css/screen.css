@@ -173,6 +173,8 @@ h6 {
   width: 30px;
   height: 30px;
   margin: 0.75rem;
+  margin-left: 0;
+  margin-right: 1.25rem;
 }
 .c-social__btn {
   padding: 0.5rem;
@@ -333,14 +335,31 @@ h6 {
 .c-programma .col-2 {
   width: 20%;
 }
-.c-programma__filter--slider {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: 0.5rem;
+.c-programma__top .row {
+  --bs-gutter-x: 0;
+}
+.c-programma__filter .row {
+  margin-left: 0;
+}
+.c-programma__filter .col-3 {
+  width: 24.5% !important;
+}
+.c-programma__filter--time {
+  padding: 0;
   border-radius: 0.5rem;
   background-color: #e6be45;
+}
+.c-programma__filter--time .col-2 {
+  width: 10%;
+}
+.c-programma__filter--location {
+  padding: 0;
+}
+.c-programma__filter--type {
+  padding: 0;
+}
+.c-programma__filter--search {
+  padding: 0;
 }
 .c-programma__filter--search div .form-control {
   padding: 1rem;
