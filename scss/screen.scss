@@ -457,7 +457,6 @@ h6 {
 }
 
 .c-programma {
-	
 	@include lg {
 		.col-lg-2 {
 			width: 20%;
@@ -523,6 +522,129 @@ h6 {
 					border-color: $Color-tertiary;
 				}
 			}
+		}
+	}
+}
+
+.c-map {
+	height: 500px;
+	margin-bottom: 1rem;
+
+	&__filter {
+		.form-check {
+			&-input {
+				border-radius: 100%;
+				border-width: 1px;
+
+				&:checked {
+					background-image: none;
+				}
+
+				&:focus {
+					box-shadow: none;
+				}
+			}
+		}
+
+		&--locatie {
+			border-color: $Color-secondary;
+
+			&:focus {
+				border-color: $Color-secondary;
+			}
+
+			&:checked {
+				background-color: $Color-secondary;
+				border-color: $Color-secondary;
+			}
+		}
+
+		&--wc {
+			border-color: $Color-text-dark;
+
+			&:focus {
+				border-color: $Color-text-dark;
+			}
+
+			&:checked {
+				background-color: $Color-text-dark;
+				border-color: $Color-text-dark;
+			}
+		}
+
+		&--recycle {
+			border-color: $Color-accent-1;
+
+			&:focus {
+				border-color: $Color-accent-1;
+			}
+
+			&:checked {
+				background-color: $Color-accent-1;
+				border-color: $Color-accent-1;
+			}
+		}
+
+		&--fiets {
+			border-color: gray;
+
+			&:focus {
+				border-color: gray;
+			}
+
+			&:checked {
+				background-color: gray;
+				border-color: gray;
+			}
+		}
+
+		&--info {
+			border-color: $Color-accent-2;
+
+			&:focus {
+				border-color: $Color-accent-2;
+			}
+
+			&:checked {
+				background-color: $Color-accent-2;
+				border-color: $Color-accent-2;
+			}
+		}
+	}
+
+	&__legend {
+		&--text {
+			text-decoration: none;
+			width: auto;
+			margin: 0.2rem 0.4rem;
+			padding: 0.5rem;
+			color: $Color-text-light;
+			background-color: $Color-secondary;
+			border-radius: 0.3125rem;
+
+			&:hover {
+				color: $Color-text-dark;
+				background-color: $Color-tertiary;
+			}
+		}
+	}
+}
+
+.c-leaflet {
+	&__loc {
+		&--ico {
+			margin-left: -0.8rem;
+			margin-top: -1rem;
+			z-index: -2;
+		}
+
+		&--text {
+			font-family: $font-main;
+			color: $Color-text-light;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-45%, -60%);
 		}
 	}
 }
