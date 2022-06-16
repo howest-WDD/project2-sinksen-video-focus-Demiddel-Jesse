@@ -29,9 +29,6 @@ const showLocations = function (jsonObjectMetContainer) {
             const straatnaam = locatie.straatnaam
             const likes = locatie.likes
             const id = locatie.id
-            console.log(id)
-
-
 
             const object = {id, omschrijving}
 

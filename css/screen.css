@@ -384,7 +384,67 @@ h6 {
 
 .c-map {
   height: 500px;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+.c-map__filter .form-check-input {
+  border-radius: 100%;
+  border-width: 1px;
+}
+.c-map__filter .form-check-input:checked {
+  background-image: none;
+}
+.c-map__filter .form-check-input:focus {
+  box-shadow: none;
+}
+.c-map__filter--locatie {
+  border-color: #b39436;
+}
+.c-map__filter--locatie:focus {
+  border-color: #b39436;
+}
+.c-map__filter--locatie:checked {
+  background-color: #b39436;
+  border-color: #b39436;
+}
+.c-map__filter--wc {
+  border-color: #000000;
+}
+.c-map__filter--wc:focus {
+  border-color: #000000;
+}
+.c-map__filter--wc:checked {
+  background-color: #000000;
+  border-color: #000000;
+}
+.c-map__filter--recycle {
+  border-color: #4863a0;
+}
+.c-map__filter--recycle:focus {
+  border-color: #4863a0;
+}
+.c-map__filter--recycle:checked {
+  background-color: #4863a0;
+  border-color: #4863a0;
+}
+.c-map__filter--fiets {
+  border-color: gray;
+}
+.c-map__filter--fiets:focus {
+  border-color: gray;
+}
+.c-map__filter--fiets:checked {
+  background-color: gray;
+  border-color: gray;
+}
+.c-map__filter--info {
+  border-color: #bb2423;
+}
+.c-map__filter--info:focus {
+  border-color: #bb2423;
+}
+.c-map__filter--info:checked {
+  background-color: #bb2423;
+  border-color: #bb2423;
 }
 .c-map__legend--text {
   text-decoration: none;
