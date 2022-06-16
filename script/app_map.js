@@ -4,15 +4,6 @@ let provider = "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" ;
 let copyright = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a> `
 let map, layerGroup;
 
-const myIcon = L.icon({
-	iconUrl: '../img/logo-sinksen.svg',
-	iconSize: [44, 55],
-	iconAnchor: [22, 55],
-	popupAnchor: [0, -55],
-	shadowSize: [69, 55],
-	shadowAnchor: [22, 55],
-});
-
 let markers = [];
 
 const showMap = function(){
@@ -28,7 +19,6 @@ const showLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
         // console.log(arrLocations)
-		let htmlString = ``;
 		
 		for (const locatie of arrLocations) {
 			
@@ -52,7 +42,7 @@ const showLocations = function (jsonObjectMetContainer) {
                     </svg>
                     ${likes}
                 </p>`;
-			createMarker(coordinates, htmlPopupContent)
+			createLocationMarker(coordinates, htmlPopupContent, id)
 		}
 		const group = new L.featureGroup(markers);
 		map.fitBounds(group.getBounds());
@@ -65,19 +55,18 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
         // console.log(arrLocations)
-		let htmlString = ``;
 		
 		for (const locatie of arrLocations) {
 			
 			const coordinates = locatie.geo_location.coordinates;
             const omschrijving = locatie.omschrijving
-            const straatnaam = locatie.straatnaam
-            const likes = locatie.likes
-            const id = locatie.id
-            // console.log(coordinates)
+            console.log(omschrijving)
 
-			const htmlPopupContent = ``;
-			createMarker(coordinates, htmlPopupContent)
+			const htmlPopupContent = `
+            <h5>
+                ${omschrijving}
+            </h5>`;
+			createOrganisationMarker(coordinates, htmlPopupContent, omschrijving)
 		}
 		const group = new L.featureGroup(markers);
 		map.fitBounds(group.getBounds());
@@ -86,9 +75,23 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 	}
 };
 
-const createMarker = function(coordinates, popupContent){
+const createLocationMarker = function(coordinates, popupContent, id){
 	// console.log(coordinates);
-	let marker = L.marker([coordinates[0],coordinates[1]], {icon: myIcon}).addTo(layerGroup);
+	let marker = L.marker([coordinates[0],coordinates[1]], {icon: new L.divIcon({
+        html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>`+
+        `<h5 class="c-leaflet__loc--text">${id}</h5>`
+    })
+    }).addTo(layerGroup);
+	marker.bindPopup(popupContent);
+	markers.push(marker);
+}
+
+const createOrganisationMarker = function(coordinates, popupContent, name){
+	// console.log(coordinates);
+	let marker = L.marker([coordinates[0],coordinates[1]], {icon: new L.divIcon({
+        html: `<img id="" class="c-leaflet__loc--ico" src="../img/icon-${name}.svg" height="50" width="50"/>`
+    })
+    }).addTo(layerGroup);
 	marker.bindPopup(popupContent);
 	markers.push(marker);
 }
@@ -104,7 +107,7 @@ const getOrganisationLocations = function () {
 // Init / DOMcontentLoaded
 const init = function () {
 	console.log('🚀 DOM geladen');
-    // getLocationCoordinates();
+    getLocationCoordinates();
     getOrganisationLocations();
 	showMap();
 };
