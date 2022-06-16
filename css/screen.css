@@ -384,8 +384,20 @@ h6 {
 
 .c-map {
   height: 500px;
-  width: 100%;
   margin-bottom: 3rem;
+}
+.c-map__legend--text {
+  text-decoration: none;
+  width: auto;
+  margin: 0.2rem 0.4rem;
+  padding: 0.5rem;
+  color: #ffffff;
+  background-color: #b39436;
+  border-radius: 0.3125rem;
+}
+.c-map__legend--text:hover {
+  color: #000000;
+  background-color: #e6be45;
 }
 
 .c-leaflet__loc--ico {

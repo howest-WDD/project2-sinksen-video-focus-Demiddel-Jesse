@@ -18,6 +18,8 @@ const showMap = function(){
 const showLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
+        let htmlContent = ``;
+        let data = [];
         // console.log(arrLocations)
 		
 		for (const locatie of arrLocations) {
@@ -27,7 +29,16 @@ const showLocations = function (jsonObjectMetContainer) {
             const straatnaam = locatie.straatnaam
             const likes = locatie.likes
             const id = locatie.id
-            // console.log(coordinates)
+            console.log(id)
+
+
+
+            const object = {id, omschrijving}
+
+            data.push(object) 
+            data.sort((a, b) => {
+                return a.id - b.id;
+            });
 
 			const htmlPopupContent = `
                 <h5>
@@ -44,8 +55,20 @@ const showLocations = function (jsonObjectMetContainer) {
                 </p>`;
 			createLocationMarker(coordinates, htmlPopupContent, id)
 		}
+
+        for (const locatie of data) {
+
+            const naam = locatie.omschrijving
+            const id = locatie.id
+
+            htmlContent += `
+                <a class="c-map__legend--text" href="detail.html">${id}. ${naam}</a>
+            `;
+        }
+
 		const group = new L.featureGroup(markers);
 		map.fitBounds(group.getBounds());
+        document.querySelector(".js-legend").innerHTML = htmlContent;
 	} catch (error) {
 		console.error(error);
 	}
@@ -60,7 +83,7 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 			
 			const coordinates = locatie.geo_location.coordinates;
             const omschrijving = locatie.omschrijving
-            console.log(omschrijving)
+            // console.log(omschrijving)
 
 			const htmlPopupContent = `
             <h5>

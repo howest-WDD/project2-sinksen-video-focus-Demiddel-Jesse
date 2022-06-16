@@ -528,8 +528,24 @@ h6 {
 
 .c-map {
 	height: 500px;
-	width: 100%;
 	margin-bottom: 3rem;
+
+	&__legend {
+		&--text {
+			text-decoration: none;
+			width: auto;
+			margin: 0.2rem 0.4rem;
+			padding: 0.5rem;
+			color: $Color-text-light;
+			background-color: $Color-secondary;
+			border-radius: 0.3125rem;
+
+			&:hover {
+				color: $Color-text-dark;
+				background-color: $Color-tertiary;
+			}
+		}
+	}
 }
 
 .c-leaflet {
