@@ -125,11 +125,11 @@ const getOrganisationLocations = function () {
 }
 
 // Init / DOMcontentLoaded
-const init = function () {
-	console.log('🚀 DOM geladen');
+const init_map = function () {
+	console.log('🚀 DOM-map geladen');
     getLocationCoordinates();
     getOrganisationLocations();
 	showMap();
 };
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', init_map);
