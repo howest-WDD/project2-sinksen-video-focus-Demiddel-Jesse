@@ -1,41 +1,40 @@
 'use strict';
 
-let provider = "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" ;
-let copyright = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a> `
+let provider = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+let copyright = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a> `;
 let map, layerGroup;
 
 let markers = [];
 
-const showMap = function(){
-    map = L.map('js-map').setView([50.8194776, 3.2577263], 13);
-    L.tileLayer(provider,{
-        attribution: copyright
-    }).addTo(map);
-    layerGroup = L.layerGroup().addTo(map);
-    console.log("showMap is active")
-}
+const showMap = function () {
+	map = L.map('js-map').setView([50.8194776, 3.2577263], 13);
+	L.tileLayer(provider, {
+		attribution: copyright,
+	}).addTo(map);
+	layerGroup = L.layerGroup().addTo(map);
+	console.log('showMap is active');
+};
 
 const showLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
-        let htmlContent = ``;
-        let data = [];
-        // console.log(arrLocations)
-		
+		let htmlContent = ``;
+		let data = [];
+		// console.log(arrLocations)
+
 		for (const locatie of arrLocations) {
-			
 			const coordinates = locatie.geo_location.coordinates;
-            const omschrijving = locatie.omschrijving
-            const straatnaam = locatie.straatnaam
-            const likes = locatie.likes
-            const id = locatie.id
+			const omschrijving = locatie.omschrijving;
+			const straatnaam = locatie.straatnaam;
+			const likes = locatie.likes;
+			const id = locatie.id;
 
-            const object = {id, omschrijving}
+			const object = { id, omschrijving };
 
-            data.push(object) 
-            data.sort((a, b) => {
-                return a.id - b.id;
-            });
+			data.push(object);
+			data.sort((a, b) => {
+				return a.id - b.id;
+			});
 
 			const htmlPopupContent = `
                 <h5>
@@ -50,22 +49,21 @@ const showLocations = function (jsonObjectMetContainer) {
                     </svg>
                     ${likes}
                 </p>`;
-			createLocationMarker(coordinates, htmlPopupContent, id)
+			createLocationMarker(coordinates, htmlPopupContent, id);
 		}
 
-        for (const locatie of data) {
+		for (const locatie of data) {
+			const naam = locatie.omschrijving;
+			const id = locatie.id;
 
-            const naam = locatie.omschrijving
-            const id = locatie.id
-
-            htmlContent += `
+			htmlContent += `
                 <a class="c-map__legend--text" href="detail.html">${id}. ${naam}</a>
             `;
-        }
+		}
 
 		const group = new L.featureGroup(markers);
 		map.fitBounds(group.getBounds());
-        document.querySelector(".js-legend").innerHTML = htmlContent;
+		document.querySelector('.js-legend').innerHTML = htmlContent;
 	} catch (error) {
 		console.error(error);
 	}
@@ -74,19 +72,18 @@ const showLocations = function (jsonObjectMetContainer) {
 const showOrganisationLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
-        // console.log(arrLocations)
-		
+		// console.log(arrLocations)
+
 		for (const locatie of arrLocations) {
-			
 			const coordinates = locatie.geo_location.coordinates;
-            const omschrijving = locatie.omschrijving
-            // console.log(omschrijving)
+			const omschrijving = locatie.omschrijving;
+			// console.log(omschrijving)
 
 			const htmlPopupContent = `
             <h5>
                 ${omschrijving}
             </h5>`;
-			createOrganisationMarker(coordinates, htmlPopupContent, omschrijving)
+			createOrganisationMarker(coordinates, htmlPopupContent, omschrijving);
 		}
 		const group = new L.featureGroup(markers);
 		map.fitBounds(group.getBounds());
@@ -95,40 +92,41 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 	}
 };
 
-const createLocationMarker = function(coordinates, popupContent, id){
+const createLocationMarker = function (coordinates, popupContent, id) {
 	// console.log(coordinates);
-	let marker = L.marker([coordinates[0],coordinates[1]], {icon: new L.divIcon({
-        html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>`+
-        `<h5 class="c-leaflet__loc--text">${id}</h5>`
-    })
-    }).addTo(layerGroup);
+	let marker = L.marker([coordinates[0], coordinates[1]], {
+		icon: new L.divIcon({
+			html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>` + `<h5 class="c-leaflet__loc--text">${id}</h5>`,
+		}),
+	}).addTo(layerGroup);
 	marker.bindPopup(popupContent);
 	markers.push(marker);
-}
+};
 
-const createOrganisationMarker = function(coordinates, popupContent, name){
+const createOrganisationMarker = function (coordinates, popupContent, name) {
 	// console.log(coordinates);
-	let marker = L.marker([coordinates[0],coordinates[1]], {icon: new L.divIcon({
-        html: `<img id="" class="c-leaflet__loc--ico" src="../img/icon-${name}.svg" height="50" width="50"/>`
-    })
-    }).addTo(layerGroup);
+	let marker = L.marker([coordinates[0], coordinates[1]], {
+		icon: new L.divIcon({
+			html: `<img id="" class="c-leaflet__loc--ico" src="../img/icon-${name}.svg" height="50" width="50"/>`,
+		}),
+	}).addTo(layerGroup);
 	marker.bindPopup(popupContent);
 	markers.push(marker);
-}
+};
 
 const getLocationCoordinates = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/?nopagination=true&page=1', showLocations);
 };
 
 const getOrganisationLocations = function () {
-    handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/organisatie/?nopagination=true&page=1', showOrganisationLocations);
-}
+	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/organisatie/?nopagination=true&page=1', showOrganisationLocations);
+};
 
 // Init / DOMcontentLoaded
 const init_map = function () {
 	console.log('🚀 DOM-map geladen');
-    getLocationCoordinates();
-    getOrganisationLocations();
+	getLocationCoordinates();
+	getOrganisationLocations();
 	showMap();
 };
 
