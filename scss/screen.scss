@@ -443,6 +443,27 @@ h6 {
 			}
 		}
 	}
+
+	.c-map {
+		height: 300px;
+	}
+
+	.row {
+		.container {
+			.js-detail-location {
+				.c-detail__txt {
+					&--like {
+						@include mob {
+							justify-content: end;
+						}
+						@include sm {
+							justify-content: space-between;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /* Artist item component */

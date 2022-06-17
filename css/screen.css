@@ -323,6 +323,19 @@ h6 {
 .c-detail__txt--like a:hover {
   color: #e6be45;
 }
+.c-detail .c-map {
+  height: 300px;
+}
+@media (min-width: 320px) {
+  .c-detail .row .container .js-detail-location .c-detail__txt--like {
+    justify-content: end;
+  }
+}
+@media (min-width: 577px) {
+  .c-detail .row .container .js-detail-location .c-detail__txt--like {
+    justify-content: space-between;
+  }
+}
 
 /* Artist item component */
 .c-card__text {
