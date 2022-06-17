@@ -43,7 +43,9 @@ const showProgramma = function (jsonObjectMetContainer) {
 						<div class="mb-3 mb-xl-5">
 							<h2>${title}</h2>
 							<h4>${loc}</h4>
-							<sub>${dag} ${starttime[0]}.${starttime[1]}u - ${endtime[0]}.${endtime[1]}u</sub>
+							<sub>${dag}
+							</br>
+							${starttime[0]}.${starttime[1]}u - ${endtime[0]}.${endtime[1]}u</sub>
 						</div>
 						<p>${detail}</p>
 						<div class="row c-detail__txt--like">
@@ -94,7 +96,7 @@ const showProgramma = function (jsonObjectMetContainer) {
 	}
 };
 
-const createLocationMarker = function (coordinates, popupContent, id) {
+const createLocationMarker = function (coordinates, popupContent) {
 	// console.log(coordinates);
 	let marker = L.marker([coordinates[0], coordinates[1]], {
 		icon: new L.divIcon({
