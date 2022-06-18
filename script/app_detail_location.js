@@ -6,6 +6,9 @@ let map, layerGroup;
 
 let markers = [];
 
+//#region show functions
+
+// shows the leaflet map
 const showMap = function () {
 	map = L.map('js-map').setView([50.8194776, 3.2577263], 13);
 	L.tileLayer(provider, {
@@ -15,6 +18,7 @@ const showMap = function () {
 	console.log('showMap is active');
 };
 
+// shows the detail of the location
 const showDetail = function (jsonObjectMetContainer) {
 	try {
 		const location = jsonObjectMetContainer.data;
@@ -82,6 +86,7 @@ const showDetail = function (jsonObjectMetContainer) {
 	}
 };
 
+// shows the activities at location
 const showProgramma = function (jsonObjectMetContainer) {
 	try {
 		const arrProgramma = jsonObjectMetContainer.data;
@@ -134,18 +139,6 @@ const showProgramma = function (jsonObjectMetContainer) {
 		console.error(error);
 	}
 };
-
-const createLocationMarker = function (coordinates, popupContent) {
-	// console.log(coordinates);
-	let marker = L.marker([coordinates[0], coordinates[1]], {
-		icon: new L.divIcon({
-			html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>`,
-		}),
-	}).addTo(layerGroup);
-	marker.bindPopup(popupContent);
-	markers.push(marker);
-};
-
 // adjust the like counter on click
 const showLikes = function (jsonObjectMetContainer) {
 	try {
@@ -184,6 +177,23 @@ const showFavorite = function () {
 	}
 };
 
+//#endregion
+
+//#region create marker functions
+
+const createLocationMarker = function (coordinates, popupContent) {
+	// console.log(coordinates);
+	let marker = L.marker([coordinates[0], coordinates[1]], {
+		icon: new L.divIcon({
+			html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>`,
+		}),
+	}).addTo(layerGroup);
+	marker.bindPopup(popupContent);
+	markers.push(marker);
+};
+
+//#endregion
+
 //#region callbacks
 
 // for click like event
@@ -204,6 +214,9 @@ const callbackClickFavorite = function () {
 
 //#endregion
 
+//#region get functions
+
+// get the details of the location
 const getDetail = function () {
 	const id = document.URL;
 	const arrid = id.split('?');
@@ -211,6 +224,7 @@ const getDetail = function () {
 	handleData(`https://dv-sinksen.herokuapp.com/api/v1/locaties/${arrid[1]}/`, showDetail);
 };
 
+// get the activities at location
 const getProgramma = function () {
 	const id = document.URL;
 	const arrid = id.split('?');
@@ -225,6 +239,8 @@ const getLikes = function () {
 
 	handleData(`https://dv-sinksen.herokuapp.com/api/v1/locaties/${arrid[1]}/`, showLikes);
 };
+
+//#endregion
 
 //#region listens
 

@@ -6,6 +6,8 @@ let map, layerGroup;
 
 let markers = [];
 
+//#region show functions
+
 const showMap = function () {
 	map = L.map('js-map').setView([50.8194776, 3.2577263], 13);
 	L.tileLayer(provider, {
@@ -92,6 +94,10 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 	}
 };
 
+//#endregion
+
+//#region create marker functions
+
 const createLocationMarker = function (coordinates, popupContent, id) {
 	// console.log(coordinates);
 	let marker = L.marker([coordinates[0], coordinates[1]], {
@@ -114,6 +120,10 @@ const createOrganisationMarker = function (coordinates, popupContent, name) {
 	markers.push(marker);
 };
 
+//#endregion
+
+//#region get functions
+
 const getLocationCoordinates = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/?nopagination=true&page=1', showLocations);
 };
@@ -121,6 +131,8 @@ const getLocationCoordinates = function () {
 const getOrganisationLocations = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/organisatie/?nopagination=true&page=1', showOrganisationLocations);
 };
+
+//#endregion
 
 // Init / DOMcontentLoaded
 const init_map = function () {

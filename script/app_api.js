@@ -1,5 +1,7 @@
 'use strict';
 
+//#region show functions
+
 const showProgramma = function (jsonObjectMetContainer) {
 	try {
 		const arrProgramma = jsonObjectMetContainer.data;
@@ -53,9 +55,15 @@ const showProgramma = function (jsonObjectMetContainer) {
 	}
 };
 
+//#endregion
+
+//#region get functions
+
 const getProgramma = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/activiteiten/?nopagination=true', showProgramma);
 };
+
+//#endregion
 
 const init_api = function () {
 	console.log('🚀 DOM-api geladen');
