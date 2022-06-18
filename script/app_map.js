@@ -57,7 +57,7 @@ const showLocations = function (jsonObjectMetContainer) {
 			const id = locatie.id;
 
 			htmlContent += `
-                <a class="c-map__legend--text" href="detail.html">${id}. ${naam}</a>
+                <a class="c-map__legend--text" href="detaillocation.html?${id}">${id}. ${naam}</a>
             `;
 		}
 

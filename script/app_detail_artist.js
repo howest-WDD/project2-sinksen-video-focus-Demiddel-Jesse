@@ -233,12 +233,23 @@ const listenToClickFavorite = function () {
 	});
 };
 
+// listens to back button
+const listenToClickBack = function () {
+	const button = document.querySelector('.js-back-btn');
+
+	button.addEventListener('click', function () {
+		console.log('go back');
+		history.back();
+	});
+};
+
 //#endregion
 
 const init_detail = function () {
 	console.log('🚀 DOM-api geladen');
 	getProgramma();
 	showMap();
+	listenToClickBack();
 };
 
 document.addEventListener('DOMContentLoaded', init_detail);

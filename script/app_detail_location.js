@@ -161,7 +161,6 @@ const showLikes = function (jsonObjectMetContainer) {
 		`;
 
 		button.innerHTML = htmlContent;
-		console.log('added');
 	} catch (error) {
 		console.error(error);
 	}
@@ -239,7 +238,8 @@ const listenToClickLike = function () {
 		// console.log(id);
 		const payload = '{"aantal_extra_likes": 1}';
 		handleData(
-			`https://dv-sinksen.herokuapp.com/api/v1/activiteiten/${id}/like/
+			`https://dv-sinksen.herokuapp.com/api/v1/locaties/${id}/like/
+
 		`,
 			callbackClickLike,
 			callbackClickLikeFail,
@@ -260,12 +260,23 @@ const listenToClickFavorite = function () {
 	});
 };
 
+// listens to back button
+const listenToClickBack = function () {
+	const button = document.querySelector('.js-back-btn');
+
+	button.addEventListener('click', function () {
+		console.log('go back');
+		history.back();
+	});
+};
+
 //#endregion
 
 const init_detail = function () {
 	console.log('🚀 DOM-api geladen');
 	getDetail();
 	showMap();
+	listenToClickBack();
 };
 
 document.addEventListener('DOMContentLoaded', init_detail);
