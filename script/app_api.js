@@ -1,10 +1,10 @@
 'use strict';
 
 let startTime = '08';
-let endTime = '22';
-let locations = '1%2B2';
-let categories = '1%2B2';
-let days = '1%2B2%2B3';
+let endTime = '04';
+let locations = '';
+let categories = '';
+let days = '';
 
 //#region show functions
 
@@ -15,6 +15,7 @@ const showProgramma = function (jsonObjectMetContainer) {
 		arrProgramma.sort((a, b) => {
 			return a.id - b.id;
 		});
+		document.querySelector('.js-programma').innerHTML = htmlContent;
 		// console.log(arrProgramma);
 		for (const artist of arrProgramma) {
 			const title = artist.titel;
@@ -64,20 +65,26 @@ const showProgramma = function (jsonObjectMetContainer) {
 
 const showLocations = function (jsonObjectMetContainer) {
 	try {
-		const locations = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected class="js-location-btn">All locations</option>`;
-
-		for (const location of locations) {
+		const objLocations = jsonObjectMetContainer.data;
+		let htmlContent = `<option selected value="" class="js-location-all">All locations</option>`;
+		let locationString = `1`;
+		for (const location of objLocations) {
 			// console.log(location);
 			const title = location.omschrijving;
 			const id = location.id;
 
 			htmlContent += `
-			<option value="${id}">${title}</option>
-			`;
-		}
+			<option value="${id}">${title}</option>`;
 
+			if (id > 1) {
+				locationString += '%2B' + `${id}`;
+			} else {
+				console.log('id = 1');
+			}
+		}
+		locations = locationString;
 		document.querySelector('.js-location-input').innerHTML = htmlContent;
+		document.querySelector('.js-location-all').value = locations;
 
 		// listenToFilter();
 		getDagen();
@@ -88,20 +95,25 @@ const showLocations = function (jsonObjectMetContainer) {
 
 const showDays = function (jsonObjectMetContainer) {
 	try {
-		const days = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected class="js-day-btn">All Dagen</option>`;
-
-		for (const day of days) {
+		const obDays = jsonObjectMetContainer.data;
+		let htmlContent = `<option selected value="" class="js-day-all">All Dagen</option>`;
+		let dayString = `1`;
+		for (const day of obDays) {
 			const title = day.voluit;
 			const id = day.id;
 
 			htmlContent += `
-			<option value="${id}">${title}</option>
-			`;
+			<option value="${id}">${title}</option>`;
+
+			if (id > 1) {
+				dayString += '%2B' + `${id}`;
+			} else {
+				console.log('id = 1');
+			}
 		}
-
+		days = dayString;
 		document.querySelector('.js-day-input').innerHTML = htmlContent;
-
+		document.querySelector('.js-day-all').value = days;
 		getCategorys();
 	} catch (error) {
 		console.log(error);
@@ -111,19 +123,25 @@ const showDays = function (jsonObjectMetContainer) {
 const showCategorys = function (jsonObjectMetContainer) {
 	try {
 		const categorys = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected>Alle Categorieën</option>`;
+		let htmlContent = `<option selected value="" class="js-category-all">Alle Categorieën</option>`;
+		let categoryString = '1';
 
 		for (const category of categorys) {
 			const title = category.omschrijving;
 			const id = category.id;
 
 			htmlContent += `
-			<option value="${id}">${title}</option>
-			`;
+			<option value="${id}">${title}</option>`;
+
+			if (id > 1) {
+				categoryString += '%2B' + `${id}`;
+			} else {
+				console.log('id = 1');
+			}
 		}
-
+		categories = categoryString;
 		document.querySelector('.js-category-input').innerHTML = htmlContent;
-
+		document.querySelector('.js-category-all').value = categoryString;
 		listenToFilter();
 	} catch (error) {
 		console.log(error);
@@ -167,6 +185,9 @@ const getFiltered = function () {
 
 const listenToFilter = function () {
 	console.log('start');
+	console.log(days);
+	console.log(categories);
+	console.log(locations);
 
 	const stime = document.querySelector('.js-stime-input');
 	const etime = document.querySelector('.js-etime-input');

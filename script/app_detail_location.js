@@ -24,16 +24,18 @@ const showDetail = function (jsonObjectMetContainer) {
 		const location = jsonObjectMetContainer.data;
 		let htmlContent = ``;
 
-		const title = location.straatnaam;
+		const straat = location.straatnaam;
 		const coordinates = location.geo_location.coordinates;
 		const likes = location.likes;
 		const id = location.id;
+		const title = location.omschrijving;
 
 		htmlContent += `
 		<div class="container">
 			<div class="col-12 align-self-center c-detail__txt">
 				<div class="">
 					<h2>${title}</h2>
+					<p>${straat}</p>
 				</div>
 	
 				<div class="row c-detail__txt--like">
