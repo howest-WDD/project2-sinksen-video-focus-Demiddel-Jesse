@@ -63,47 +63,81 @@
 								<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
 							</svg>
 							<div class="col-5 c-programma__filter--location">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>Start</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
+								<select class="form-select js-stime-input" aria-label="Default select example">
+									<option selected value="08">08u</option>
+									<option value="09">09u</option>
+									<option value="10">10u</option>
+									<option value="11">11u</option>
+									<option value="12">12u</option>
+									<option value="13">13u</option>
+									<option value="14">14u</option>
+									<option value="15">15u</option>
+									<option value="16">16u</option>
+									<option value="17">17u</option>
+									<option value="18">18u</option>
+									<option value="19">19u</option>
+									<option value="20">20u</option>
+									<option value="21">21u</option>
+									<option value="22">22u</option>
+									<option value="23">23u</option>
+									<option value="24">24u</option>
+									<option value="01">01u</option>
+									<option value="02">02u</option>
+									<option value="03">03u</option>
+									<option value="04">04u</option>
 								</select>
 							</div>
 							<div class="col-5 c-programma__filter--location">
-								<select class="form-select" aria-label="Default select example">
-									<option selected>einde</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
+								<select class="form-select js-etime-input" aria-label="Default select example">
+									<option value="08">08u</option>
+									<option value="09">09u</option>
+									<option value="10">10u</option>
+									<option value="11">11u</option>
+									<option value="12">12u</option>
+									<option value="13">13u</option>
+									<option value="14">14u</option>
+									<option value="15">15u</option>
+									<option value="16">16u</option>
+									<option value="17">17u</option>
+									<option value="18">18u</option>
+									<option selected value="19">19u</option>
+									<option value="20">20u</option>
+									<option value="21">21u</option>
+									<option value="22">22u</option>
+									<option value="23">23u</option>
+									<option value="24">24u</option>
+									<option value="01">01u</option>
+									<option value="02">02u</option>
+									<option value="03">03u</option>
+									<option value="04">04u</option>
 								</select>
 							</div>
 						</div>
 						<div class="col-12 col-sm-6 col-lg-3 mb-2 c-programma__filter--location">
-							<select class="form-select" aria-label="Default select example">
-								<option selected>Open this select menu</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+							<select class="form-select js-day-input" aria-label="Default select example">
+								<option selected>Alle dagen</option>
+								<option value="1">Vrijdag 3 juni</option>
+								<option value="2">Zaterdag 4 juni</option>
+								<option value="3">Zondag 5 juni</option>
+								<option value="3">Maandag 6 juni</option>
 							</select>
 						</div>
 						<div class="col-12 col-sm-6 col-lg-3 mb-2 c-programma__filter--type">
-							<select class="form-select" aria-label="Default select example">
+							<select class="form-select js-location-input" aria-label="Default select example">
 								<option selected>Open this select menu</option>
 								<option value="1">One</option>
 								<option value="2">Two</option>
 								<option value="3">Three</option>
 							</select>
 						</div>
-						<div class="col-12 col-sm-6 col-lg-3 mb-2 c-programma__filter--search">
-							<div class="input-group">
-								<input type="text" class="form-control" placeholder="Zoeken" aria-label="search" aria-describedby="basic-addon1" />
-								<button class="input-group-text" id="basic-addon1">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-										<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-									</svg>
-								</button>
-							</div>
+						<div class="col-12 col-sm-6 col-lg-3 mb-2 c-programma__filter--location">
+							<select class="form-select js-category-input" aria-label="Default select example">
+								<option selected>Alle Categorieën</option>
+								<option value="1">Vrijdag 3 juni</option>
+								<option value="2">Zaterdag 4 juni</option>
+								<option value="3">Zondag 5 juni</option>
+								<option value="3">Maandag 6 juni</option>
+							</select>
 						</div>
 					</div>
 				</div>
@@ -166,11 +200,11 @@
 							<p>En blijf op de hoogte van alle nieuwtjes over sinksen 2022</p>
 							<div class="row c-nieuwsbrief mb-2 justify-content-end align-items-center">
 								<div class="form-floating mt-2 col">
-									<input type="e-mail" class="form-control" id="floatingInput" placeholder="name@example.com" />
+									<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
 									<label for="floatingInput">E-mail</label>
 								</div>
 								<button class="c-btn__primary m-3 mt-2 mb-0 col-4 col-sm-3 col-lg-3 col-xl-2">
-									<p class="c-btn__txt">Verstuur</p>
+									<div class="c-btn__txt">Verstuur</div>
 								</button>
 							</div>
 						</div>
