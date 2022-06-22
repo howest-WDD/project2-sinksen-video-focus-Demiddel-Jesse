@@ -403,7 +403,7 @@ h6 {
 .c-detail {
 	&__link {
 		text-decoration: none;
-		color: $Color-secondary;
+		color: $Color-secondary !important;
 
 		&:hover {
 			color: $Color-tertiary;
@@ -439,6 +439,27 @@ h6 {
 
 				&:hover {
 					color: $Color-tertiary;
+				}
+			}
+		}
+	}
+
+	.c-map {
+		height: 300px;
+	}
+
+	.row {
+		.container {
+			.js-detail-location {
+				.c-detail__txt {
+					&--like {
+						@include mob {
+							justify-content: end;
+						}
+						@include sm {
+							justify-content: space-between;
+						}
+					}
 				}
 			}
 		}
