@@ -1,5 +1,11 @@
 'use strict';
 
+let startTime = '08';
+let endTime = '22';
+let locations = '1%2B2';
+let categories = '1%2B2';
+let days = '1%2B2%2B3';
+
 //#region show functions
 
 const showProgramma = function (jsonObjectMetContainer) {
@@ -51,8 +57,6 @@ const showProgramma = function (jsonObjectMetContainer) {
 		}
 		document.querySelector('.js-programma').innerHTML = htmlContent;
 		// console.log(htmlContent);
-
-		getLocations();
 	} catch (error) {
 		console.error(error);
 	}
@@ -147,8 +151,14 @@ const getCategorys = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/categorieen/?nopagination=true&page=1', showCategorys);
 };
 
-const getFiltered = function (start = '08', end = '19', locations = [1, 2, 3], categorys = [1, 2, 3], days = [1, 2, 3]) {
-	handleData(`https://dv-sinksen.herokuapp.com/api/v1/activiteiten/search/?dagid=1%2B2%2B3&locatieid=${locations[0]}%2B${locations[1]}%2B${locations[2]}&categorieid=1%2B2%2B3&omschrijving=&start=${start}%3A00&einde=${end}%3A00&nopagination=true&page=1`, showProgramma);
+const getFiltered = function () {
+	console.log(days);
+	console.log(categories);
+	console.log(locations);
+	console.log(endTime);
+	console.log(startTime);
+
+	handleData(`https://dv-sinksen.herokuapp.com/api/v1/activiteiten/search/?dagid=${days}&locatieid=${locations}&categorieid=${categories}&omschrijving=&start=${startTime}%3A00&einde=${endTime}%3A00&nopagination=true&page=1`, showProgramma);
 };
 
 //#endregion
@@ -167,60 +177,36 @@ const listenToFilter = function () {
 	stime.addEventListener('change', function () {
 		console.log('start-time clicked');
 		let one = this.value;
-		console.log(one);
-		getFiltered(one);
-
-		var url = new URL(document.URL);
-		var search_params = url.searchParams;
-		console.log(search_params);
-
-		// new value of "id" is set to "101"
-		search_params.set('start', one);
-
-		// change the search property of the main url
-		url.search = search_params.toString();
-
-		// the new url string
-		var new_url = url.toString();
-
-		// output : http://demourl.com/path?id=101&topic=main
-		console.log(new_url);
+		startTime = one;
+		getFiltered();
 	});
 
 	etime.addEventListener('change', function () {
 		console.log('end time clicked');
 		let two = this.value;
-		console.log(two);
-		let one = '08';
-		getFiltered(one, two);
-
-		var url = new URL(document.URL);
-		var search_params = url.searchParams;
-		console.log(search_params);
-
-		// new value of "id" is set to "101"
-		search_params.set('end', two);
-
-		// change the search property of the main url
-		url.search = search_params.toString();
-
-		// the new url string
-		var new_url = url.toString();
-
-		// output : http://demourl.com/path?id=101&topic=main
-		console.log(new_url);
+		endTime = two;
+		getFiltered();
 	});
 
 	day.addEventListener('change', function () {
 		console.log('day clicked');
+		let day = this.value;
+		days = day;
+		getFiltered();
 	});
 
 	category.addEventListener('change', function () {
 		console.log('category clicked');
+		let category = this.value;
+		categories = category;
+		getFiltered();
 	});
 
 	location.addEventListener('change', function () {
 		console.log('location clicked');
+		let location = this.value;
+		locations = location;
+		getFiltered();
 	});
 };
 
@@ -229,6 +215,7 @@ const listenToFilter = function () {
 const init_api = function () {
 	console.log('🚀 DOM-api geladen');
 	getProgramma();
+	getLocations();
 };
 
 document.addEventListener('DOMContentLoaded', init_api);
