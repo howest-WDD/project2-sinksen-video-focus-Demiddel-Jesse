@@ -51,7 +51,7 @@ const showLocations = function (jsonObjectMetContainer) {
                     </svg>
                     ${likes}
                 </p>
-				<a href="detaillocation.html?${id}">
+				<a href="detaillocation.html?${id}" class="c-detail__link">
 					Zie alle activiteiten...
 				</a>`;
 

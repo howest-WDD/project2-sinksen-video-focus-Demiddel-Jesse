@@ -403,7 +403,7 @@ h6 {
 .c-detail {
 	&__link {
 		text-decoration: none;
-		color: $Color-secondary;
+		color: $Color-secondary !important;
 
 		&:hover {
 			color: $Color-tertiary;
