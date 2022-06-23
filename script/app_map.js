@@ -6,6 +6,8 @@ let map, layerGroupLocation, layerGroupWC, layerGroupFiets, layerGroupTrash, lay
 
 let markers = [];
 
+let type = '';
+
 //#region show functions
 
 const showMap = function () {
@@ -83,6 +85,27 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
 	try {
 		const arrLocations = jsonObjectMetContainer.data;
 		// console.log(arrLocations)
+		for (const locatie of arrLocations) {
+			const coordinates = locatie.geo_location.coordinates;
+			const omschrijving = locatie.omschrijving;
+			// console.log(omschrijving)
+			const htmlPopupContent = `
+            <h5>
+                ${omschrijving}
+            </h5>`;
+			createOrganisationMarker(coordinates, htmlPopupContent, omschrijving);
+		}
+		const group = new L.featureGroup(markers);
+		map.fitBounds(group.getBounds());
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+const showOrganisationLocationsFiltered = function (jsonObjectMetContainer, type) {
+	try {
+		const arrLocations = jsonObjectMetContainer.data;
+		// console.log(arrLocations)
 
 		for (const locatie of arrLocations) {
 			const coordinates = locatie.geo_location.coordinates;
@@ -93,10 +116,10 @@ const showOrganisationLocations = function (jsonObjectMetContainer) {
             <h5>
                 ${omschrijving}
             </h5>`;
-			createOrganisationMarker(coordinates, htmlPopupContent, omschrijving);
+			createOrganisationMarkerFiltered(coordinates, htmlPopupContent, omschrijving);
 		}
 		const group = new L.featureGroup(markers);
-		map.fitBounds(group.getBounds());
+		// map.fitBounds(group.getBounds());
 	} catch (error) {
 		console.error(error);
 	}
@@ -158,6 +181,51 @@ const createOrganisationMarker = function (coordinates, popupContent, name) {
 	}
 };
 
+const createOrganisationMarkerFiltered = function (coordinates, popupContent, name) {
+	// console.log(coordinates);
+	if (name.toLowerCase() === type) {
+		if (name.toLowerCase() === 'wc') {
+			console.log('work');
+			let marker = L.marker([coordinates[0], coordinates[1]], {
+				icon: new L.divIcon({
+					html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+				}),
+			}).addTo(layerGroupWC);
+			marker.bindPopup(popupContent);
+			markers.push(marker);
+		} else if (name.toLowerCase() === 'fiets') {
+			console.log('work');
+			let marker = L.marker([coordinates[0], coordinates[1]], {
+				icon: new L.divIcon({
+					html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+				}),
+			}).addTo(layerGroupFiets);
+			marker.bindPopup(popupContent);
+			markers.push(marker);
+		} else if (name.toLowerCase() === 'infopunt') {
+			console.log('work');
+			let marker = L.marker([coordinates[0], coordinates[1]], {
+				icon: new L.divIcon({
+					html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+				}),
+			}).addTo(layerGroupInfo);
+			marker.bindPopup(popupContent);
+			markers.push(marker);
+		} else if (name.toLowerCase() === 'recyclagepunt') {
+			console.log('work');
+			let marker = L.marker([coordinates[0], coordinates[1]], {
+				icon: new L.divIcon({
+					html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+				}),
+			}).addTo(layerGroupTrash);
+			marker.bindPopup(popupContent);
+			markers.push(marker);
+		}
+	} else {
+		console.log('not ' + type);
+	}
+};
+
 //#endregion
 
 //#region get functions
@@ -170,34 +238,60 @@ const getOrganisationLocations = function () {
 	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/organisatie/?nopagination=true&page=1', showOrganisationLocations);
 };
 
+const getOrganisationLocationsFiltered = function () {
+	handleData('https://dv-sinksen.herokuapp.com/api/v1/locaties/organisatie/?nopagination=true&page=1', showOrganisationLocationsFiltered);
+};
+
 //#endregion
 
 //#region listen functions
-const listenToClickDeleteTrash = function () {
-	document.querySelector('.js-check-btn').addEventListener('click', function () {
-		layerGroupTrash.clearLayers();
+
+const listenToChecks = function () {
+	document.querySelector('.js-filter-recycle').addEventListener('change', function () {
+		if (this.checked) {
+			type = 'recyclagepunt';
+			getOrganisationLocationsFiltered();
+		} else {
+			layerGroupTrash.clearLayers();
+		}
+	});
+
+	document.querySelector('.js-filter-location').addEventListener('click', function () {
+		if (this.checked) {
+			getLocationCoordinates();
+		} else {
+			layerGroupLocation.clearLayers();
+		}
+	});
+
+	document.querySelector('.js-filter-info').addEventListener('click', function () {
+		if (this.checked) {
+			type = 'infopunt';
+			getOrganisationLocationsFiltered();
+		} else {
+			layerGroupInfo.clearLayers();
+		}
+	});
+
+	document.querySelector('.js-filter-fiets').addEventListener('click', function () {
+		if (this.checked) {
+			type = 'fiets';
+			getOrganisationLocationsFiltered();
+		} else {
+			layerGroupFiets.clearLayers();
+		}
+	});
+
+	document.querySelector('.js-filter-wc').addEventListener('click', function () {
+		if (this.checked) {
+			type = 'wc';
+			getOrganisationLocationsFiltered();
+		} else {
+			layerGroupWC.clearLayers();
+		}
 	});
 };
-const listenToClickDeleteLocations = function () {
-	document.querySelector('.js-check-btn').addEventListener('click', function () {
-		layerGroupLocation.clearLayers();
-	});
-};
-const listenToClickDeleteInfo = function () {
-	document.querySelector('.js-check-btn').addEventListener('click', function () {
-		layerGroupInfo.clearLayers();
-	});
-};
-const listenToClickDeleteFiets = function () {
-	document.querySelector('.js-check-btn').addEventListener('click', function () {
-		layerGroupFiets.clearLayers();
-	});
-};
-const listenToClickDeleteWc = function () {
-	document.querySelector('.js-check-btn').addEventListener('click', function () {
-		layerGroupWC.clearLayers();
-	});
-};
+
 //#endregion
 
 // Init / DOMcontentLoaded
@@ -206,7 +300,7 @@ const init_map = function () {
 	getLocationCoordinates();
 	getOrganisationLocations();
 	showMap();
-	listenToClickDelete();
+	listenToChecks();
 };
 
 document.addEventListener('DOMContentLoaded', init_map);
