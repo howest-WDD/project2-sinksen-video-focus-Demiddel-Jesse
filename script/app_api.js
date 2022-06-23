@@ -5,6 +5,7 @@ let endTime = '04';
 let locations = '';
 let categories = '';
 let days = '';
+let searchBar = '';
 
 //#region show functions
 
@@ -175,8 +176,9 @@ const getFiltered = function () {
 	console.log(locations);
 	console.log(endTime);
 	console.log(startTime);
+	console.log(searchBar);
 
-	handleData(`https://dv-sinksen.herokuapp.com/api/v1/activiteiten/search/?dagid=${days}&locatieid=${locations}&categorieid=${categories}&omschrijving=&start=${startTime}%3A00&einde=${endTime}%3A00&nopagination=true&page=1`, showProgramma);
+	handleData(`https://dv-sinksen.herokuapp.com/api/v1/activiteiten/search/?dagid=${days}&locatieid=${locations}&categorieid=${categories}&omschrijving=${searchBar}&start=${startTime}%3A00&einde=${endTime}%3A00&nopagination=true&page=1`, showProgramma);
 };
 
 //#endregion
@@ -194,6 +196,7 @@ const listenToFilter = function () {
 	const day = document.querySelector('.js-day-input');
 	const location = document.querySelector('.js-location-input');
 	const category = document.querySelector('.js-category-input');
+	const search = document.querySelector('.js-search-input');
 
 	stime.addEventListener('change', function () {
 		console.log('start-time clicked');
@@ -227,6 +230,13 @@ const listenToFilter = function () {
 		console.log('location clicked');
 		let location = this.value;
 		locations = location;
+		getFiltered();
+	});
+
+	search.addEventListener('input', function () {
+		console.log('changed');
+		let search = this.value;
+		searchBar = search;
 		getFiltered();
 	});
 };

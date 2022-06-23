@@ -389,6 +389,7 @@ h6 {
   background-color: #e6be45;
   border: solid #e6be45;
   border-right: transparent;
+  border-width: 0.09rem;
 }
 .c-programma__filter--search div .input-group-text {
   background-color: #e6be45;
