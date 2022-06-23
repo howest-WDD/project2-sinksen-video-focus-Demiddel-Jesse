@@ -258,7 +258,7 @@ const showLikes = function (jsonObjectMetContainer) {
                     </svg>
         ${likes}
         `;
-		document.querySelector('.js-popup-likes').innerHTML = htmlPopLikes;
+		// document.querySelector('.js-popup-likes').innerHTML = htmlPopLikes;
 		button.innerHTML = htmlContent;
 	} catch (error) {
 		console.error(error);
