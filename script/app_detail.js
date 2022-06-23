@@ -291,7 +291,7 @@ const createLocationMarker = function (coordinates, popupContent) {
 	// console.log(coordinates);
 	let marker = L.marker([coordinates[0], coordinates[1]], {
 		icon: new L.divIcon({
-			html: `<img class="c-leaflet__loc--ico" src="../img/icon-location.svg" height="50" width="50"/>`,
+			html: `<img class="c-leaflet__loc--ico" src="img/icon-location.svg" height="50" width="50"/>`,
 		}),
 	}).addTo(layerGroup);
 	marker.bindPopup(popupContent);
