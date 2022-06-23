@@ -67,7 +67,7 @@ const showProgramma = function (jsonObjectMetContainer) {
 const showLocations = function (jsonObjectMetContainer) {
 	try {
 		const objLocations = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected value="" class="js-location-all">All locations</option>`;
+		let htmlContent = `<option selected value="" class="js-location-all">Alle locations</option>`;
 		let locationString = `1`;
 		for (const location of objLocations) {
 			// console.log(location);
@@ -97,7 +97,7 @@ const showLocations = function (jsonObjectMetContainer) {
 const showDays = function (jsonObjectMetContainer) {
 	try {
 		const obDays = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected value="" class="js-day-all">All Dagen</option>`;
+		let htmlContent = `<option selected value="" class="js-day-all">Alle dagen</option>`;
 		let dayString = `1`;
 		for (const day of obDays) {
 			const title = day.voluit;
@@ -124,7 +124,7 @@ const showDays = function (jsonObjectMetContainer) {
 const showCategorys = function (jsonObjectMetContainer) {
 	try {
 		const categorys = jsonObjectMetContainer.data;
-		let htmlContent = `<option selected value="" class="js-category-all">Alle Categorieën</option>`;
+		let htmlContent = `<option selected value="" class="js-category-all">Alle categorieën</option>`;
 		let categoryString = '1';
 
 		for (const category of categorys) {
