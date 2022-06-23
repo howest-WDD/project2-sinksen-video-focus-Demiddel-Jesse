@@ -94,11 +94,11 @@
 					</div>
 					<div class="container">
 						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-							<?xml version="1.0" encoding="UTF-8"?><svg width="50" height="50" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.72 474.46"><path class="c-paging__arrow" d="M515.37,474.46l38.37-83.64,189.5,83.64,46.76-83.4,66.42,27.06,124.3-180.89-124.3-180.89-66.42,27.06L743.24,0l-189.5,83.64L515.37,0,0,237.23l515.37,237.23Zm348.96-237.23l-83.05,118.61-27.65-19.36,69.49-99.25-69.49-99.25,27.65-19.36,83.05,118.61ZM731.95,28.62l22.37,47.98L409.84,237.23l344.48,160.63-22.37,47.98L284.57,237.23,731.95,28.62Zm-5.63,208.61l-49.01,73.74-164.22-73.74,164.22-73.74,49.01,73.74ZM469.83,55.04l22.37,47.98L204.38,237.23l287.82,134.21-22.37,47.98L79.11,237.23,469.83,55.04Z" /></svg>
+							<svg width="50" height="50" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.72 474.46"><path class="c-paging__arrow" d="M515.37,474.46l38.37-83.64,189.5,83.64,46.76-83.4,66.42,27.06,124.3-180.89-124.3-180.89-66.42,27.06L743.24,0l-189.5,83.64L515.37,0,0,237.23l515.37,237.23Zm348.96-237.23l-83.05,118.61-27.65-19.36,69.49-99.25-69.49-99.25,27.65-19.36,83.05,118.61ZM731.95,28.62l22.37,47.98L409.84,237.23l344.48,160.63-22.37,47.98L284.57,237.23,731.95,28.62Zm-5.63,208.61l-49.01,73.74-164.22-73.74,164.22-73.74,49.01,73.74ZM469.83,55.04l22.37,47.98L204.38,237.23l287.82,134.21-22.37,47.98L79.11,237.23,469.83,55.04Z" /></svg>
 							<span class="visually-hidden">Previous</span>
 						</button>
 						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-							<?xml version="1.0" encoding="UTF-8"?><svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.72 474.46">
+							<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980.72 474.46">
 								<g id="a" />
 								<g id="b">
 									<g id="c"><path class="c-paging__arrow" d="M465.35,0l-38.37,83.64L237.48,0l-46.76,83.4-66.42-27.06L0,237.23l124.3,180.89,66.42-27.06,46.76,83.4,189.5-83.64,38.37,83.64L980.72,237.23,465.35,0ZM116.39,237.23l83.05-118.61,27.65,19.36-69.49,99.25,69.49,99.25-27.65,19.36-83.05-118.61Zm132.38,208.61l-22.37-47.98,344.48-160.63L226.4,76.6l22.37-47.98,447.38,208.61L248.77,445.84Zm5.63-208.61l49.01-73.74,164.22,73.74-164.22,73.74-49.01-73.74Zm256.49,182.19l-22.37-47.98,287.82-134.21L488.52,103.02l22.37-47.98,390.72,182.19-390.72,182.19Z" /></g>
@@ -127,25 +127,23 @@
 							<br />
 							Shrijf je nu in om deel te nemen.
 						</p>
-						<button class="c-btn__primary">
-							<p class="c-btn__txt">Schrijf je nu in!</p>
-						</button>
+						<button class="c-btn__primary c-btn__txt">Schrijf je nu in!</button>
 					</div>
 				</div>
 			</section>
-			<section class="mt-5 mb-5 c-sfeerfoto d-none d-md-block">
+			<div class="mt-5 mb-5 c-sfeerfoto d-none d-md-block">
 				<div class="row">
 					<img src="img/Sfeer-1.png" alt="Sfeer-1" class="col-6" />
 					<img src="img/Sfeer-2.png" alt="Sfeer-2" class="col-6" />
 					<img src="img/Sfeer-3.png" alt="Sfeer-3" class="col-6" />
 					<img src="img/Sfeer-4.png" alt="Sfeer-4" class="col-6" />
 				</div>
-			</section>
+			</div>
 		</main>
 		<footer class="c-footer mt-5">
 			<div class="container">
 				<!-- Top section -->
-				<section>
+				<div>
 					<!-- social stuff -->
 					<div class="row">
 						<!-- Twitter button -->
@@ -182,23 +180,21 @@
 							<p>En blijf op de hoogte van alle nieuwtjes over sinksen 2022</p>
 							<div class="row c-nieuwsbrief mb-2 justify-content-end align-items-center">
 								<div class="form-floating mt-2 col">
-									<input type="e-mail" class="form-control" id="floatingInput" placeholder="name@example.com" />
+									<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
 									<label for="floatingInput">E-mail</label>
 								</div>
-								<button class="c-btn__primary m-3 mt-2 mb-0 col-4 col-sm-3 col-lg-3 col-xl-2">
-									<p class="c-btn__txt">Verstuur</p>
-								</button>
+								<button class="c-btn__primary c-btn__txt m-3 mt-2 mb-0 col-4 col-sm-3 col-lg-3 col-xl-2">Verstuur</button>
 							</div>
 						</div>
 					</article>
-				</section>
+				</div>
 			</div>
 			<!-- Sponser section -->
-			<section class="c-footer__sponsor mb-0">
+			<div class="c-footer__sponsor mb-0">
 				<div class="container p-5">
 					<img src="img/02-kortrijk-logo-wit-pos.png" alt="logo Kortrijk" width="300" class="img-fluid" />
 				</div>
-			</section>
+			</div>
 			<!-- Howest banner -->
 			<div class="text-center c-footer__bottom pt-1 pb-1">
 				<div class="container">
