@@ -2,7 +2,7 @@
 
 let provider = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
 let copyright = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a> `;
-let map, layerGroup;
+let map, layerGroupLocation, layerGroupWC, layerGroupFiets, layerGroupTrash, layerGroupInfo;
 
 let markers = [];
 
@@ -13,7 +13,11 @@ const showMap = function () {
 	L.tileLayer(provider, {
 		attribution: copyright,
 	}).addTo(map);
-	layerGroup = L.layerGroup().addTo(map);
+	layerGroupLocation = L.layerGroup().addTo(map);
+	layerGroupWC = L.layerGroup().addTo(map);
+	layerGroupFiets = L.layerGroup().addTo(map);
+	layerGroupTrash = L.layerGroup().addTo(map);
+	layerGroupInfo = L.layerGroup().addTo(map);
 	console.log('showMap is active');
 };
 
@@ -108,20 +112,50 @@ const createLocationMarker = function (coordinates, popupContent, id) {
 		icon: new L.divIcon({
 			html: `<img class="c-leaflet__loc--ico" src="img/icon-location.svg" height="50" width="50"/>` + `<h5 class="c-leaflet__loc--text">${id}</h5>`,
 		}),
-	}).addTo(layerGroup);
+	}).addTo(layerGroupLocation);
 	marker.bindPopup(popupContent);
 	markers.push(marker);
 };
 
 const createOrganisationMarker = function (coordinates, popupContent, name) {
 	// console.log(coordinates);
-	let marker = L.marker([coordinates[0], coordinates[1]], {
-		icon: new L.divIcon({
-			html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
-		}),
-	}).addTo(layerGroup);
-	marker.bindPopup(popupContent);
-	markers.push(marker);
+	if (name.toLowerCase() === 'wc') {
+		console.log('work');
+		let marker = L.marker([coordinates[0], coordinates[1]], {
+			icon: new L.divIcon({
+				html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+			}),
+		}).addTo(layerGroupWC);
+		marker.bindPopup(popupContent);
+		markers.push(marker);
+	} else if (name.toLowerCase() === 'fiets') {
+		console.log('work');
+		let marker = L.marker([coordinates[0], coordinates[1]], {
+			icon: new L.divIcon({
+				html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+			}),
+		}).addTo(layerGroupFiets);
+		marker.bindPopup(popupContent);
+		markers.push(marker);
+	} else if (name.toLowerCase() === 'infopunt') {
+		console.log('work');
+		let marker = L.marker([coordinates[0], coordinates[1]], {
+			icon: new L.divIcon({
+				html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+			}),
+		}).addTo(layerGroupInfo);
+		marker.bindPopup(popupContent);
+		markers.push(marker);
+	} else if (name.toLowerCase() === 'recyclagepunt') {
+		console.log('work');
+		let marker = L.marker([coordinates[0], coordinates[1]], {
+			icon: new L.divIcon({
+				html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
+			}),
+		}).addTo(layerGroupTrash);
+		marker.bindPopup(popupContent);
+		markers.push(marker);
+	}
 };
 
 //#endregion
@@ -138,12 +172,41 @@ const getOrganisationLocations = function () {
 
 //#endregion
 
+//#region listen functions
+const listenToClickDeleteTrash = function () {
+	document.querySelector('.js-check-btn').addEventListener('click', function () {
+		layerGroupTrash.clearLayers();
+	});
+};
+const listenToClickDeleteLocations = function () {
+	document.querySelector('.js-check-btn').addEventListener('click', function () {
+		layerGroupLocation.clearLayers();
+	});
+};
+const listenToClickDeleteInfo = function () {
+	document.querySelector('.js-check-btn').addEventListener('click', function () {
+		layerGroupInfo.clearLayers();
+	});
+};
+const listenToClickDeleteFiets = function () {
+	document.querySelector('.js-check-btn').addEventListener('click', function () {
+		layerGroupFiets.clearLayers();
+	});
+};
+const listenToClickDeleteWc = function () {
+	document.querySelector('.js-check-btn').addEventListener('click', function () {
+		layerGroupWC.clearLayers();
+	});
+};
+//#endregion
+
 // Init / DOMcontentLoaded
 const init_map = function () {
 	console.log('🚀 DOM-map geladen');
 	getLocationCoordinates();
 	getOrganisationLocations();
 	showMap();
+	listenToClickDelete();
 };
 
 document.addEventListener('DOMContentLoaded', init_map);
