@@ -40,7 +40,7 @@ const showProgramma = function (jsonObjectMetContainer) {
             <a href="detailartist.html?${id}" class=" col-12 col-sm-6 col-lg-2">
             <div class="c-card">
 					<div class="card bg-dark text-white mr-1">
-						<img src="${img}" class="card-img" alt="${title}" height="400" width="100%" />
+						<img src="${img}" class="card-img" alt="${title}" height="400" />
 						<div class="card-img-overlay c-card__gradient d-flex align-items-end">
 							<div class="">
 								<h5 class="card-title">${title}</h5>
