@@ -117,7 +117,7 @@ const createOrganisationMarker = function (coordinates, popupContent, name) {
 	// console.log(coordinates);
 	let marker = L.marker([coordinates[0], coordinates[1]], {
 		icon: new L.divIcon({
-			html: `<img id="" class="c-leaflet__loc--ico" src="../img/icon-${name}.svg" height="50" width="50"/>`,
+			html: `<img id="" class="c-leaflet__loc--ico" src="img/icon-${name}.svg" height="50" width="50"/>`,
 		}),
 	}).addTo(layerGroup);
 	marker.bindPopup(popupContent);
